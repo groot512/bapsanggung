@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>밥상궁 한식뷔페 | 매일 차리는 궁의 밥상</title>
+<meta name="description" content="밥상궁 한식뷔페 - 궁중 반상의 격을 매일의 가격으로. 100평 표준 매장 3D 도면·조감도, 메뉴, 가맹 안내." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --jusil:#9E2A2B;        /* 주칠 홍 - Primary */
+  --jusil-dark:#6E1B1C;
+  --dancheong:#1F6F65;    /* 단청 청록 - Secondary */
+  --gold:#C1962F;         /* 유기 금 - Accent */
+  --gold-light:#E3C878;
+  --ink:#231C19;          /* 먹 */
+  --ink-soft:#5A4F48;
+  --hanji:#FAF5EC;        /* 한지 바탕 */
+  --stone:#EFE6D6;
+  --line:rgba(35,28,25,.14);
+  --shadow:0 18px 50px -24px rgba(35,28,25,.45);
+  --maxw:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:74px}
+body{
+  font-family:'Noto Sans KR',-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;
+  background:var(--hanji);color:var(--ink);line-height:1.7;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3,h4,.serif{font-family:'Gowun Batang','Noto Sans KR',serif;font-weight:700;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.sec{padding:104px 0}
+.sec-alt{background:#fff}
+.sec-dark{background:var(--ink);color:#EFE7DC}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.24em;
+  font-weight:700;color:var(--jusil);text-transform:uppercase;margin-bottom:18px;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--gold)}
+.sec-dark .eyebrow{color:var(--gold-light)}
+.sec-title{font-size:clamp(28px,3.6vw,44px);line-height:1.32;margin-bottom:18px}
+.sec-lead{font-size:16.5px;color:var(--ink-soft);max-width:660px;font-weight:300}
+.sec-dark .sec-lead{color:#C9BDB0}
+
+/* ---------- NAV ---------- */
+header.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,245,236,0);backdrop-filter:blur(0px);
+  transition:background .35s ease, box-shadow .35s ease, backdrop-filter .35s;
+}
+header.nav.solid{background:rgba(250,245,236,.94);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.nav-in{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand .mark{width:40px;height:40px;flex:none}
+.brand .bt{display:block;font-family:'Gowun Batang',serif;font-weight:700;font-size:21px;letter-spacing:.06em;line-height:1.15}
+.brand .bs{display:block;font-size:9px;letter-spacing:.24em;color:var(--gold);font-weight:700;line-height:1}
+.nav .brand .bt,.nav .brand .bs{color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.45)}
+.nav.solid .brand .bt{color:var(--ink);text-shadow:none}
+.nav.solid .brand .bs{color:var(--jusil);text-shadow:none}
+.nav-menu{display:flex;align-items:center;gap:30px;font-size:14.5px;font-weight:500}
+.nav-menu a{color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.5);transition:color .2s}
+.nav.solid .nav-menu a{color:var(--ink);text-shadow:none}
+.nav-menu a:hover{color:var(--gold)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 26px;border-radius:2px;font-size:14.5px;font-weight:700;border:1px solid transparent;
+  cursor:pointer;transition:all .25s ease;font-family:inherit;
+}
+.btn-primary{background:var(--jusil);color:#fff}
+.btn-primary:hover{background:var(--jusil-dark)}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-line{border-color:var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--hanji)}
+.btn-gold{background:var(--gold);color:#241c10}
+.btn-gold:hover{background:var(--gold-light)}
+.nav-cta{padding:11px 20px;font-size:13.5px}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:6px}
+.burger span{display:block;width:22px;height:2px;background:#fff;margin:5px 0}
+.nav.solid .burger span{background:var(--ink)}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('assets/hero-bansang.jpg') center/cover no-repeat;transform:scale(1.04)}
+.hero-bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(20,14,11,.92) 0%,rgba(20,14,11,.72) 42%,rgba(20,14,11,.25) 100%)}
+.hero-in{position:relative;z-index:2;color:#fff;padding:120px 0 70px;max-width:760px}
+.hero-mark{width:96px;height:96px;margin-bottom:26px}
+.hero h1{font-size:clamp(40px,6.4vw,76px);line-height:1.2;letter-spacing:-.02em;margin-bottom:22px;text-shadow:0 6px 40px rgba(0,0,0,.5)}
+.hero h1 em{font-style:normal;color:var(--gold-light)}
+.hero-sub{font-size:clamp(15px,1.7vw,18px);font-weight:300;color:#E2D8CB;max-width:540px;margin-bottom:34px}
+.hero-ko{font-size:13px;letter-spacing:.34em;color:var(--gold);font-weight:700;margin-bottom:14px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:46px}
+.hero-price{display:flex;gap:0;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.22);padding-top:24px}
+.hero-price div{padding-right:34px;margin-right:34px;border-right:1px solid rgba(255,255,255,.18)}
+.hero-price div:last-child{border:0}
+.hero-price b{display:block;font-size:23px;font-family:'Gowun Batang',serif;color:#fff}
+.hero-price span{font-size:12.5px;color:#B9AC9E;letter-spacing:.06em}
+.scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.65);font-size:11px;letter-spacing:.3em;text-align:center}
+.scroll-hint::after{content:"";display:block;width:1px;height:40px;background:linear-gradient(rgba(255,255,255,.6),transparent);margin:10px auto 0}
+
+/* ---------- MARKET ---------- */
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:54px}
+.stat{background:var(--hanji);padding:34px 26px}
+.sec-alt .stat{background:#fff}
+.stat .num{font-family:'Gowun Batang',serif;font-size:40px;line-height:1;color:var(--jusil);letter-spacing:-.02em}
+.stat .num small{font-size:17px;margin-left:3px;color:var(--ink-soft)}
+.stat .lb{font-size:13.5px;font-weight:700;margin:12px 0 7px}
+.stat .dc{font-size:12.5px;color:var(--ink-soft);font-weight:300;line-height:1.6}
+.insight{display:grid;grid-template-columns:1.05fr .95fr;gap:58px;margin-top:70px;align-items:start}
+.tl{position:relative;padding-left:26px;border-left:2px solid var(--stone)}
+.tl-item{position:relative;padding:0 0 30px 0}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:"";position:absolute;left:-33px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--stone);border:2px solid var(--hanji)}
+.tl-item.hot::before{background:var(--jusil)}
+.tl-item .yr{font-size:12.5px;font-weight:700;letter-spacing:.14em;color:var(--jusil)}
+.tl-item h4{font-size:16.5px;margin:4px 0 6px}
+.tl-item p{font-size:14px;color:var(--ink-soft);font-weight:300}
+.finding{background:#fff;border:1px solid var(--line);border-top:3px solid var(--jusil);padding:30px 32px;margin-bottom:16px}
+.sec-alt .finding{background:var(--hanji)}
+.finding h4{font-size:17px;margin-bottom:8px;display:flex;gap:10px;align-items:baseline}
+.finding h4 i{font-style:normal;font-size:12px;color:var(--gold);font-weight:700;letter-spacing:.1em}
+.finding p{font-size:14.2px;color:var(--ink-soft);font-weight:300}
+.src{font-size:11.5px;color:#9A8E83;margin-top:26px;font-weight:300;line-height:1.8}
+
+/* ---------- CONCEPT ---------- */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:56px}
+.pillar{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.12);padding:38px 32px;transition:.3s}
+.pillar:hover{background:rgba(255,255,255,.08);transform:translateY(-4px)}
+.pillar .ic{width:46px;height:46px;margin-bottom:20px;color:var(--gold)}
+.pillar h3{font-size:21px;margin-bottom:6px;color:#fff}
+.pillar .en{font-size:11px;letter-spacing:.26em;color:var(--gold);margin-bottom:14px}
+.pillar p{font-size:14.2px;color:#C3B7AA;font-weight:300}
+.logo-lab{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;margin-top:88px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:52px}
+.logo-stage{display:flex;flex-direction:column;align-items:center;gap:26px}
+.logo-stage .big{width:200px;height:200px}
+.logo-lock{text-align:center}
+.logo-lock .kw{font-family:'Gowun Batang',serif;font-size:44px;letter-spacing:.16em;color:#fff;line-height:1}
+.logo-lock .en{font-size:10.5px;letter-spacing:.42em;color:var(--gold);margin-top:10px}
+.logo-notes dt{font-size:15.5px;font-weight:700;color:#fff;margin-bottom:5px;display:flex;gap:9px;align-items:center}
+.logo-notes dt::before{content:"";width:6px;height:6px;background:var(--gold);transform:rotate(45deg)}
+.logo-notes dd{font-size:14px;color:#BCAFA2;font-weight:300;margin-bottom:20px;padding-left:15px}
+.slogan-box{border-left:2px solid var(--gold);padding:8px 0 8px 22px;margin:34px 0 0}
+.slogan-box .main{font-family:'Gowun Batang',serif;font-size:30px;color:#fff;line-height:1.35}
+.slogan-box .sub{font-size:13.5px;color:var(--gold-light);letter-spacing:.06em;margin-top:8px}
+.palette{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:60px}
+.sw{border:1px solid rgba(255,255,255,.12)}
+.sw .chip{height:96px}
+.sw .meta{padding:14px 16px;font-size:12px;background:rgba(255,255,255,.04)}
+.sw .meta b{display:block;font-size:13.5px;color:#fff;margin-bottom:3px}
+.sw .meta code{color:var(--gold);font-size:11.5px;letter-spacing:.06em}
+.sw .meta p{color:#A2958A;font-size:11.5px;margin-top:6px;font-weight:300;line-height:1.5}
+
+/* ---------- MENU ---------- */
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:54px}
+.mcard{background:#fff;border:1px solid var(--line);padding:34px 30px;position:relative;transition:.3s}
+.mcard:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.mcard .no{position:absolute;top:24px;right:28px;font-family:'Gowun Batang',serif;font-size:34px;color:var(--stone)}
+.mcard h3{font-size:20px;margin-bottom:4px}
+.mcard .en{font-size:10.5px;letter-spacing:.24em;color:var(--gold);font-weight:700;margin-bottom:16px}
+.mcard p{font-size:14px;color:var(--ink-soft);font-weight:300;margin-bottom:16px}
+.mcard ul{list-style:none;font-size:13px;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:14px}
+.mcard li{padding:3px 0 3px 14px;position:relative}
+.mcard li::before{content:"·";position:absolute;left:3px;color:var(--jusil);font-weight:700}
+.price-tbl{width:100%;border-collapse:collapse;margin-top:54px;background:#fff;border:1px solid var(--line)}
+.price-tbl th,.price-tbl td{padding:17px 20px;text-align:left;border-bottom:1px solid var(--line);font-size:14.5px}
+.price-tbl th{background:var(--ink);color:var(--gold-light);font-size:12.5px;letter-spacing:.1em;font-weight:700}
+.price-tbl td b{font-family:'Gowun Batang',serif;font-size:19px}
+.price-tbl tr:last-child td{border-bottom:0}
+.price-note{font-size:12.5px;color:var(--ink-soft);margin-top:14px;font-weight:300}
+
+/* ---------- SPACE / FLOOR PLAN ---------- */
+.plan-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.plan-tabs{display:flex;border:1px solid rgba(255,255,255,.2)}
+.plan-tabs button{
+  background:none;border:0;color:#B4A79A;padding:13px 24px;font-size:13.5px;font-weight:700;
+  cursor:pointer;font-family:inherit;border-right:1px solid rgba(255,255,255,.14);transition:.25s;white-space:nowrap
+}
+.plan-tabs button:last-child{border-right:0}
+.plan-tabs button.on{background:var(--gold);color:#241c10}
+.plan-stage{
+  margin-top:34px;background:#12100E;border:1px solid rgba(255,255,255,.12);position:relative;overflow:hidden;
+}
+.plan-stage .view{display:none}
+.plan-stage .view.on{display:block}
+.plan-stage svg{width:100%;height:auto;display:block}
+.plan-stage img{width:100%;display:block}
+.view-cap{position:absolute;left:0;bottom:0;right:0;padding:16px 22px;font-size:12px;color:#B6A99C;
+  background:linear-gradient(transparent,rgba(0,0,0,.82));letter-spacing:.04em}
+.plan-info{display:grid;grid-template-columns:1fr 360px;gap:26px;margin-top:20px;align-items:start}
+.zone-panel{
+  background:rgba(255,255,255,.05);border:1px solid rgba(193,150,47,.5);padding:22px 24px;
+}
+.zone-panel .zt{font-family:'Gowun Batang',serif;font-size:18px;color:#fff;margin-bottom:3px}
+.zone-panel .za{font-size:11.5px;color:var(--gold);letter-spacing:.1em;margin-bottom:11px}
+.zone-panel .zd{font-size:12.8px;color:#B6A99C;font-weight:300;line-height:1.65}
+.zone-panel .hint{font-size:11.5px;color:#7E7268;margin-top:12px;border-top:1px solid rgba(255,255,255,.12);padding-top:10px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+.legend button{
+  display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.14);color:#CBBFB2;padding:8px 14px;font-size:12.5px;
+  cursor:pointer;font-family:inherit;transition:.2s
+}
+.legend button:hover,.legend button.on{background:rgba(193,150,47,.16);border-color:var(--gold);color:#fff}
+.legend i{width:11px;height:11px;border-radius:2px;display:block}
+.area-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;margin-top:76px}
+.area-tbl{width:100%;border-collapse:collapse}
+.area-tbl th,.area-tbl td{padding:13px 12px;font-size:13.6px;border-bottom:1px solid rgba(255,255,255,.12);text-align:left}
+.area-tbl th{font-size:11.5px;letter-spacing:.12em;color:var(--gold);font-weight:700}
+.area-tbl td.n{text-align:right;font-variant-numeric:tabular-nums}
+.area-tbl .bar{height:5px;background:rgba(255,255,255,.1);position:relative;margin-top:7px}
+.area-tbl .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--gold)}
+.area-tbl tfoot td{font-weight:700;color:#fff;border-top:1px solid rgba(255,255,255,.3)}
+.spec-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12)}
+.spec-list div{background:#1B1714;padding:20px 22px}
+.spec-list dt{font-size:11.5px;color:var(--gold);letter-spacing:.1em;margin-bottom:6px}
+.spec-list dd{font-family:'Gowun Batang',serif;font-size:22px;color:#fff}
+.spec-list dd small{font-size:12.5px;color:#9C9086;font-family:'Noto Sans KR';margin-left:4px}
+.flow-note{margin-top:22px;font-size:13.4px;color:#B6A99C;font-weight:300;line-height:1.85}
+.flow-note b{color:var(--gold-light);font-weight:700}
+
+/* ---------- GALLERY ---------- */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.gal figure{position:relative;overflow:hidden;background:#000}
+.gal img{transition:transform .8s cubic-bezier(.2,.7,.3,1);aspect-ratio:4/3;object-fit:cover}
+.gal figure:hover img{transform:scale(1.06)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 22px 18px;color:#fff;font-size:14px;
+  background:linear-gradient(transparent,rgba(0,0,0,.8))}
+.gal figcaption small{display:block;font-size:11px;letter-spacing:.2em;color:var(--gold-light);margin-bottom:3px}
+
+/* ---------- FRANCHISE ---------- */
+.fr-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;margin-top:56px;align-items:start}
+.cost-tbl{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line)}
+.cost-tbl th,.cost-tbl td{padding:14px 18px;font-size:14px;border-bottom:1px solid var(--line)}
+.cost-tbl th{background:var(--stone);font-size:12px;letter-spacing:.1em;text-align:left}
+.cost-tbl td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:500}
+.cost-tbl tfoot td{background:var(--ink);color:var(--gold-light);font-weight:700;border:0}
+.sim{background:var(--ink);color:#DCD2C7;padding:34px;margin-top:24px}
+.sim h4{color:#fff;font-size:17px;margin-bottom:18px}
+.sim-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.16);font-size:13.8px}
+.sim-row:last-of-type{border:0}
+.sim-row b{font-family:'Gowun Batang',serif;font-size:17px;color:var(--gold-light)}
+.steps{counter-reset:s;margin-top:10px}
+.step{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.step:last-child{border:0}
+.step .sn{counter-increment:s;flex:none;width:38px;height:38px;border:1px solid var(--jusil);color:var(--jusil);
+  display:grid;place-items:center;font-family:'Gowun Batang',serif;font-size:16px}
+.step .sn::before{content:"0" counter(s)}
+.step h4{font-size:16px;margin-bottom:3px}
+.step p{font-size:13.6px;color:var(--ink-soft);font-weight:300}
+.form-card{background:#fff;border:1px solid var(--line);padding:38px;box-shadow:var(--shadow)}
+.fr-form{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.fr-form label{font-size:12.5px;font-weight:700;color:var(--ink-soft);display:block;margin-bottom:6px}
+.fr-form input,.fr-form select,.fr-form textarea{
+  width:100%;padding:12px 14px;border:1px solid var(--line);background:var(--hanji);font-family:inherit;font-size:14px;color:var(--ink)
+}
+.fr-form input:focus,.fr-form select:focus,.fr-form textarea:focus{outline:2px solid var(--gold);border-color:transparent}
+.fr-form .full{grid-column:1/-1}
+.form-ok{display:none;background:rgba(31,111,101,.1);border:1px solid var(--dancheong);color:var(--dancheong);
+  padding:14px 18px;font-size:13.5px;margin-top:16px}
+
+/* ---------- STORE ---------- */
+.store-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.store{background:#fff;border:1px solid var(--line);padding:28px}
+.store .tag{display:inline-block;font-size:11px;letter-spacing:.12em;padding:4px 10px;background:var(--jusil);color:#fff;margin-bottom:14px}
+.store .tag.soon{background:var(--dancheong)}
+.store h4{font-size:18px;margin-bottom:8px}
+.store p{font-size:13.5px;color:var(--ink-soft);font-weight:300;margin-bottom:4px}
+.store .hr-line{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);font-size:12.8px;color:var(--ink-soft)}
+
+/* ---------- FOOTER ---------- */
+footer{background:#15120F;color:#9C9086;padding:70px 0 34px;font-size:13.5px;font-weight:300}
+.f-top{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.1)}
+.f-top h5{font-size:12px;letter-spacing:.16em;color:var(--gold);margin-bottom:16px;font-weight:700}
+.f-top ul{list-style:none}
+.f-top li{padding:4px 0}
+.f-top li a:hover{color:#fff}
+.f-brand .mark{width:52px;height:52px;margin-bottom:16px}
+.f-brand p{max-width:300px;line-height:1.8}
+.f-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px;font-size:12px;color:#6E645C}
+.disclaimer{background:rgba(255,255,255,.04);border-left:2px solid var(--gold);padding:14px 18px;margin-top:26px;font-size:11.8px;line-height:1.75;color:#8A7E74}
+
+/* ---------- REVEAL ---------- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.3,1),transform .9s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:1080px){
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .insight,.logo-lab,.area-grid,.fr-grid{grid-template-columns:1fr;gap:38px}
+  .pillars,.menu-grid,.gal,.store-grid{grid-template-columns:1fr 1fr}
+  .palette{grid-template-columns:repeat(3,1fr)}
+  .f-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .sec{padding:72px 0}
+  .wrap{padding:0 20px}
+  .nav-menu{display:none}
+  .nav-menu.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;background:var(--hanji);
+    padding:22px;gap:16px;box-shadow:var(--shadow)}
+  .nav-menu.open a{color:var(--ink);text-shadow:none}
+  .burger{display:block}
+  .pillars,.menu-grid,.gal,.store-grid,.fr-form,.spec-list{grid-template-columns:1fr}
+  .palette{grid-template-columns:repeat(2,1fr)}
+  .logo-lab{padding:30px}
+  .plan-info{grid-template-columns:1fr}
+  .hero-price div{padding-right:18px;margin-right:18px}
+  .plan-tabs{width:100%;flex-wrap:wrap}
+  .plan-tabs button{flex:1}
+  .plan-info{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== SVG SPRITE : LOGO ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo-mark" viewBox="0 0 100 100">
+    <rect x="3" y="3" width="94" height="94" rx="16" fill="#9E2A2B"/>
+    <rect x="9.5" y="9.5" width="81" height="81" rx="11" fill="none" stroke="#C1962F" stroke-width="1.4" opacity=".85"/>
+    <!-- 처마 / eave -->
+    <path d="M9 29.5 C 24 46, 76 46, 91 29.5 L 81 20 L 19 20 Z" fill="#E3C878"/>
+    <path d="M26 26.5 C 34 34, 66 34, 74 26.5" fill="none" stroke="#9E2A2B" stroke-width="1.4" opacity=".55"/>
+    <circle cx="50" cy="15.5" r="2.5" fill="#E3C878"/>
+    <!-- 김 / steam -->
+    <path d="M44.8 55 c 3.2 -3.4 -3.2 -6 0 -9.4" fill="none" stroke="#E3C878" stroke-width="2" stroke-linecap="round" opacity=".92"/>
+    <path d="M55.2 55 c 3.2 -3.4 -3.2 -6 0 -9.4" fill="none" stroke="#E3C878" stroke-width="2" stroke-linecap="round" opacity=".92"/>
+    <!-- 유기 밥그릇 / brass rice bowl -->
+    <path d="M32 59 h36 a18 18 0 0 1 -36 0 z" fill="#E3C878"/>
+    <rect x="29" y="56.2" width="42" height="3.4" rx="1.7" fill="#E3C878"/>
+    <!-- 소반 / small table -->
+    <rect x="22" y="78.6" width="56" height="3.6" rx="1.8" fill="#E3C878"/>
+    <path d="M28.5 82.2 l -2.2 5.2 M71.5 82.2 l 2.2 5.2" stroke="#E3C878" stroke-width="2.6" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand">
+      <svg class="mark"><use href="#logo-mark"/></svg>
+      <span><span class="bt">밥상궁</span><span class="bs">BAPSANGGUNG</span></span>
+    </a>
+    <nav class="nav-menu" id="navmenu">
+      <a href="#market">시장 인사이트</a>
+      <a href="#brand">브랜드</a>
+      <a href="#menu">메뉴</a>
+      <a href="#space">100평 설계</a>
+      <a href="#store">매장</a>
+      <a href="#franchise" class="btn btn-primary nav-cta">가맹 문의</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="메뉴"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-in">
+    <svg class="hero-mark"><use href="#logo-mark"/></svg>
+    <div class="hero-ko">한식뷔페 · 반상 전문</div>
+    <h1>매일 차리는<br><em>궁의 밥상</em></h1>
+    <p class="hero-sub">당일 도정한 쌀로 지은 솥밥과 60종의 반상찬.<br>궁중 반상의 격을, 오늘의 점심값으로 차려냅니다.</p>
+    <div class="hero-cta">
+      <a href="#space" class="btn btn-gold">100평 표준매장 3D 보기</a>
+      <a href="#franchise" class="btn btn-ghost">가맹 상담 신청</a>
+    </div>
+    <div class="hero-price">
+      <div><b>12,900원</b><span>평일 점심</span></div>
+      <div><b>15,900원</b><span>평일 저녁</span></div>
+      <div><b>17,900원</b><span>주말·공휴일</span></div>
+      <div><b>90분</b><span>한 끼 정찬</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<!-- ===== MARKET ===== -->
+<section class="sec" id="market">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Market Research</span>
+      <h2 class="sec-title">한식뷔페는 왜 무너졌고,<br>왜 다시 돌아오는가</h2>
+      <p class="sec-lead">밥상궁의 기획은 감이 아니라 시장 데이터에서 출발했습니다. 2013년 열풍부터 2026년 재점화까지, 한식뷔페와 한식 프랜차이즈의 실태를 정리했습니다.</p>
+    </div>
+
+    <div class="stat-grid rv">
+      <div class="stat">
+        <div class="num">43,882<small>개</small></div>
+        <div class="lb">한식 가맹점 수 (전국)</div>
+        <p class="dc">외식 세부업종 중 1위(23.9%)이자 증가율도 1위(+6.1%). 한식은 프랜차이즈의 최대 모수 시장입니다.</p>
+      </div>
+      <div class="stat">
+        <div class="num">+8.3<small>%</small></div>
+        <div class="lb">한식 가맹점 평균매출 증가율</div>
+        <p class="dc">커피와 함께 최상위 증가율. 고물가 국면에서 '한 끼 식사' 수요가 한식으로 집중되고 있습니다.</p>
+      </div>
+      <div class="stat">
+        <div class="num">3.51<small>억원</small></div>
+        <div class="lb">외식 가맹점 평균 매출액</div>
+        <p class="dc">전년 3.31억 대비 +6.1%. 소상공인 평균(1.97억)의 1.8배로, 검증된 브랜드의 안정성이 확인됩니다.</p>
+      </div>
+      <div class="stat">
+        <div class="num">7.7<small>회</small></div>
+        <div class="lb">리뉴얼 한식뷔페 일 평균 회전율</div>
+        <p class="dc">메뉴 60종·90분·1만원대로 바꾼 매장의 실측치(최대 9.8회). 한식뷔페의 해법은 '회전율'입니다.</p>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="rv">
+        <h3 style="font-size:22px;margin-bottom:24px">한식뷔페 13년, 흥망의 타임라인</h3>
+        <div class="tl">
+          <div class="tl-item">
+            <div class="yr">2013 – 2016 · 확장기</div>
+            <h4>대기업 3사의 전성기</h4>
+            <p>CJ푸드빌 계절밥상이 2013년 7월 1호점을 열며 시장을 개척, 최대 54개점까지 확장. 이랜드 자연별곡 40여 개, 풀잎채 47개(2016), 신세계 올반 14개로 '웰빙 한식' 붐이 정점에 도달.</p>
+          </div>
+          <div class="tl-item">
+            <div class="yr">2017 – 2019 · 정체기</div>
+            <h4>차별화 부재와 1인 가구의 역습</h4>
+            <p>중소기업 적합업종 지정으로 출점이 묶이고, 1인 가구·배달 확산으로 '온 가족 외식' 수요가 붕괴. 풀잎채 47→21개, 계절밥상 54→16개로 5년 만에 매장 수 반토막. 2018년 자연별곡 1호 미금점 영업 종료.</p>
+          </div>
+          <div class="tl-item">
+            <div class="yr">2020 – 2022 · 철수기</div>
+            <h4>팬데믹, 그리고 브랜드 소멸</h4>
+            <p>풀잎채는 2020년 회생절차로 운영 중단, 올반은 브랜드 철수, 계절밥상은 2022년 4월 마지막 코엑스몰점을 끝으로 폐업. 자연별곡만 한 자릿수 매장으로 명맥 유지.</p>
+          </div>
+          <div class="tl-item hot">
+            <div class="yr">2023 – 2025 · 가성비 회귀</div>
+            <h4>8,000원 백반뷔페의 역주행</h4>
+            <p>3년 연속 3%대 외식물가 상승 속에 1만원 이하 로컬 한식뷔페가 점심 줄서기 현상을 만듦. 같은 기간 가성비 뷔페 애슐리퀸즈 매출은 1,160억(2021)에서 5,000억(2025)으로 4배 이상 성장.</p>
+          </div>
+          <div class="tl-item hot">
+            <div class="yr">2026 · 재점화</div>
+            <h4>'한식다움'으로 돌아온 한식뷔페</h4>
+            <p>자연별곡이 메뉴를 100종→60종으로 압축하고 가격을 평일 15,900원, 이용시간 90분으로 재설계해 리뉴얼. 야탑점 오픈 첫 주 5,000명 방문, 회전율 평균 7.7회를 기록하며 시장 재개방을 알림.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rv">
+        <h3 style="font-size:22px;margin-bottom:24px">조사에서 도출한 4가지 결론</h3>
+        <div class="finding">
+          <h4><i>01</i> 실패의 원인은 '한식'이 아니라 구조였다</h4>
+          <p>100종 메뉴 · 2만원 후반 가격 · 120분 이용의 조합은 식자재 폐기율과 인건비를 감당할 수 없는 구조였습니다. 메뉴 수가 많을수록 품질은 평준화되고 원가는 무너집니다.</p>
+        </div>
+        <div class="finding">
+          <h4><i>02</i> 해법은 '집중 + 회전'으로 증명됐다</h4>
+          <p>메뉴 60종, 90분 이용, 1만원대. 같은 브랜드가 구조만 바꿔 회전율 7.7회와 매출 48% 상승을 만들었습니다. 밥상궁은 이 검증된 공식을 출발점으로 설계했습니다.</p>
+        </div>
+        <div class="finding">
+          <h4><i>03</i> 8,000원 뷔페와 2만원 뷔페 사이가 비어 있다</h4>
+          <p>로컬 저가 뷔페는 위생·일관성 리스크가, 프리미엄 뷔페는 가격 저항이 있습니다. 밥상궁은 1.2~1.7만원대 <b>'준프리미엄 가성비'</b> 구간을 정조준합니다.</p>
+        </div>
+        <div class="finding">
+          <h4><i>04</i> 표준화된 한식뷔페 프랜차이즈는 사실상 없다</h4>
+          <p>한식 가맹점 43,882개 중 뷔페형 표준 모델은 공백 상태입니다. 대기업 철수로 비워진 자리를, 100평 표준 설계와 물류 표준화로 채웁니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="src">출처 · 공정거래위원회 「2025년도 가맹사업 현황 통계」(2026.4 발표, 가맹점 수·평균매출은 2024년 말 정보공개서 기준) / 공정위 「2024년도 가맹사업 현황 통계」 / 이랜드이츠 자연별곡 리뉴얼 실적 보도(2026.8) / 「한끼 8000원에 줄 섰다 – 저가형 한식뷔페의 부활」(2025.8) / 나무위키 '한식 뷔페' 브랜드별 매장 수 정리. 위 수치는 공개 자료를 정리한 것이며, 밥상궁 자체 실적이 아닙니다.</p>
+  </div>
+</section>
+
+<!-- ===== BRAND / CONCEPT ===== -->
+<section class="sec sec-dark" id="brand">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Brand Concept</span>
+      <h2 class="sec-title">궁의 격식, 오늘의 가격</h2>
+      <p class="sec-lead">밥상궁(飯床宮)은 '밥상'과 '궁(宮)'의 합성어입니다. 임금의 수라상을 차려내던 반상 문화를, 매일 반복되는 한 끼의 언어로 옮깁니다. 화려함이 아니라 <b style="color:#E3C878">정갈함과 온기</b>가 브랜드의 중심입니다.</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar rv">
+        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6">
+          <rect x="4" y="30" width="40" height="3" rx="1.5"/><path d="M10 33l-3 9M38 33l3 9"/>
+          <circle cx="24" cy="22" r="7"/><circle cx="11" cy="25" r="4"/><circle cx="37" cy="25" r="4"/>
+          <path d="M24 12c2-2-2-4 0-6M17 14c1.4-1.4-1.4-2.8 0-4.2"/>
+        </svg>
+        <div class="en">THE BANSANG</div>
+        <h3>반상의 격</h3>
+        <p>12첩 반상의 구성 원리를 뷔페 동선에 그대로 옮겼습니다. 밥·국·주찬·반상찬·후식이 순서대로 놓이고, 손님은 걷는 것만으로 한 상을 완성합니다. 일 60종, 계절마다 재편성.</p>
+      </div>
+      <div class="pillar rv">
+        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M10 24h28v8a8 8 0 01-8 8H18a8 8 0 01-8-8z"/><path d="M14 24V20h20v4M6 30h4M38 30h4"/>
+          <path d="M20 14c2-2.5-2-5 0-7.5M28 14c2-2.5-2-5 0-7.5"/>
+        </svg>
+        <div class="en">LIVE FIRE &amp; POT</div>
+        <h3>솥밥과 화로</h3>
+        <p>당일 오전 도정한 쌀을 매장에서 솥에 안칩니다. 화로 라이브 코너에서는 불고기와 전을 즉석에서 구워 냅니다. '갓 지은 것'이 주는 온기를 매장의 핵심 체험으로 삼습니다.</p>
+      </div>
+      <div class="pillar rv">
+        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6">
+          <circle cx="24" cy="24" r="17"/><path d="M24 13v11l7 5"/><path d="M24 4v4M44 24h-4M24 44v-4M4 24h4"/>
+        </svg>
+        <div class="en">90 MIN COURSE</div>
+        <h3>90분의 완결</h3>
+        <p>느슨한 2시간 대신 밀도 높은 90분. 체류시간을 설계해 회전율을 확보하고, 그 이익을 식자재 등급과 가격에 되돌려 줍니다. 손님에게는 가격이, 점주에게는 수익이 남습니다.</p>
+      </div>
+    </div>
+
+    <div class="logo-lab rv">
+      <div class="logo-stage">
+        <svg class="big"><use href="#logo-mark"/></svg>
+        <div class="logo-lock">
+          <div class="kw">밥상궁</div>
+          <div class="en">BAPSANGGUNG · KOREAN BUFFET</div>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">Logo &amp; Slogan</span>
+        <h3 style="font-size:26px;color:#fff;margin-bottom:22px">인장 속에 차린 한 상</h3>
+        <dl class="logo-notes">
+          <dt>처마선 (飛簷)</dt>
+          <dd>궁궐 지붕의 날렵한 처마 곡선. 브랜드가 지키는 '격'과, 손님을 감싸는 지붕(환대)을 동시에 뜻합니다.</dd>
+          <dt>유기 밥그릇과 김</dt>
+          <dd>놋그릇에 갓 담은 솥밥에서 피어오르는 김. 따뜻한 밥 한 그릇이라는 브랜드의 본질입니다.</dd>
+          <dt>소반 (小盤)</dt>
+          <dd>다리 달린 전통 소반 위에 올린 구성. '차려 드린다', 즉 대접의 태도를 형상화했습니다.</dd>
+          <dt>인장 프레임 (印章)</dt>
+          <dd>왕실 도장을 닮은 사각 인장 테두리. 맛과 위생에 대한 본사의 보증을 상징하며, 간판·포장·유니폼에서 단독으로도 쓰입니다.</dd>
+        </dl>
+        <div class="slogan-box">
+          <div class="main">“매일 차리는 궁의 밥상”</div>
+          <div class="sub">THE ROYAL TABLE, EVERY DAY</div>
+        </div>
+        <p style="font-size:13.6px;color:#B0A396;margin-top:20px;font-weight:300">
+          서브 슬로건 · 고객용 「한 끼가 대접이 되는 곳」 &nbsp;|&nbsp; 시즌 캠페인 「오늘 점심, 임금님처럼」 &nbsp;|&nbsp; 가맹 모집용 「검증된 한 끼, 검증된 회전율」
+        </p>
+      </div>
+    </div>
+
+    <div class="rv" style="margin-top:76px">
+      <span class="eyebrow">Color System</span>
+      <h3 style="font-size:24px;color:#fff">단청과 놋그릇에서 가져온 5색</h3>
+      <div class="palette">
+        <div class="sw"><div class="chip" style="background:#9E2A2B"></div><div class="meta"><b>주칠 홍</b><code>#9E2A2B</code><p>메인 컬러. 소반의 옻칠과 궁 기둥의 붉은색. 간판·CTA·핵심 포인트.</p></div></div>
+        <div class="sw"><div class="chip" style="background:#C1962F"></div><div class="meta"><b>유기 금</b><code>#C1962F</code><p>강조 컬러. 놋그릇의 광택. 로고 도형과 프리미엄 라인 표기에 사용.</p></div></div>
+        <div class="sw"><div class="chip" style="background:#1F6F65"></div><div class="meta"><b>단청 청록</b><code>#1F6F65</code><p>보조 컬러. 단청의 녹청. 제철·건강 메뉴와 안내 사인에 제한적으로.</p></div></div>
+        <div class="sw"><div class="chip" style="background:#231C19"></div><div class="meta"><b>먹</b><code>#231C19</code><p>텍스트와 목재 마감. 다크 톤 섹션의 배경으로 브랜드 무게를 잡음.</p></div></div>
+        <div class="sw"><div class="chip" style="background:#FAF5EC;border:1px solid rgba(255,255,255,.2)"></div><div class="meta"><b>한지</b><code>#FAF5EC</code><p>바탕색. 한지의 미색. 여백을 넓게 써 '정갈함'을 시각화합니다.</p></div></div>
+      </div>
+      <p style="font-size:13.4px;color:#9C9086;margin-top:22px;font-weight:300">
+        타이포그래피 · 국문 제목 <b style="color:#E3C878">고운바탕(명조 계열)</b> — 전통의 결 / 국문 본문 <b style="color:#E3C878">노토 산스 KR</b> — 가독성 우선. 사진은 어두운 배경에 따뜻한 3000K 조명, 음식은 항상 위에서 내려다보는 '반상 시점'으로 촬영합니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MENU ===== -->
+<section class="sec sec-alt" id="menu">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Menu</span>
+      <h2 class="sec-title">하루 60종, 6개의 상차림</h2>
+      <p class="sec-lead">가짓수 경쟁을 하지 않습니다. 한식 반상의 구성을 6개 존으로 나누고, 각 존에서 가장 잘하는 것만 남겼습니다. 계절 메뉴는 월 2회 교체됩니다.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="mcard rv"><div class="no">01</div><h3>솥밥과 국</h3><div class="en">SOT-BAP &amp; GUK</div>
+        <p>당일 도정한 여주쌀을 1인 솥에 안쳐 갓 지어 냅니다. 국·탕은 매일 3종 로테이션.</p>
+        <ul><li>흑미 솥밥 · 곤드레 솥밥 · 콩나물 솥밥</li><li>사골 우거지국 · 육개장 · 맑은 된장국</li><li>간장 양념과 누룽지 서비스</li></ul></div>
+      <div class="mcard rv"><div class="no">02</div><h3>주찬 (메인 요리)</h3><div class="en">MAIN DISH</div>
+        <p>매일 8종의 메인이 1.5시간 단위로 새로 조리되어 올라갑니다.</p>
+        <ul><li>수육보쌈 · 제육볶음 · 갈비찜</li><li>안동식 찜닭 · 고등어구이 · 코다리조림</li><li>잡채 · 모둠전</li></ul></div>
+      <div class="mcard rv"><div class="no">03</div><h3>반상찬</h3><div class="en">SIDE DISHES</div>
+        <p>브랜드의 뿌리. 나물과 김치는 매일 아침 매장에서 무칩니다.</p>
+        <ul><li>제철 나물 8종 · 김치 4종</li><li>장아찌 · 젓갈 · 조림 · 무침</li><li>계절 쌈채소와 3종 장(醬)</li></ul></div>
+      <div class="mcard rv"><div class="no">04</div><h3>화로 라이브</h3><div class="en">LIVE FIRE</div>
+        <p>주문 즉시 구워 내는 라이브 코너. 대기 없이 바로 받아 갑니다.</p>
+        <ul><li>화로 불고기 · 양념 목살구이</li><li>즉석 전(煎) · 부침개</li><li>비빔밥 · 잔치국수 코너</li></ul></div>
+      <div class="mcard rv"><div class="no">05</div><h3>계절 상차림</h3><div class="en">SEASONAL</div>
+        <p>24절기를 기준으로 월 2회 교체되는 제철 한 상.</p>
+        <ul><li>봄 · 봄나물과 주꾸미</li><li>여름 · 콩국수와 초계국수</li><li>가을·겨울 · 전어, 굴, 매생이</li></ul></div>
+      <div class="mcard rv"><div class="no">06</div><h3>후식과 음차</h3><div class="en">DESSERT &amp; TEA</div>
+        <p>양식 디저트 대신 한식과 어울리는 후식으로 마무리합니다.</p>
+        <ul><li>식혜 · 수정과 · 오미자차</li><li>약과 · 인절미 · 뻥튀기</li><li>제철 과일 · 아메리카노</li></ul></div>
+    </div>
+
+    <table class="price-tbl rv">
+      <thead><tr><th>구분</th><th>이용 시간</th><th>성인</th><th>아동(37개월~초등)</th><th>경로(65세 이상)</th></tr></thead>
+      <tbody>
+        <tr><td>평일 점심</td><td>11:00 – 15:00</td><td><b>12,900원</b></td><td>7,900원</td><td>10,900원</td></tr>
+        <tr><td>평일 저녁</td><td>17:00 – 21:30</td><td><b>15,900원</b></td><td>8,900원</td><td>13,900원</td></tr>
+        <tr><td>주말 · 공휴일</td><td>11:00 – 21:30</td><td><b>17,900원</b></td><td>9,900원</td><td>15,900원</td></tr>
+      </tbody>
+    </table>
+    <p class="price-note">· 1회 이용 시간은 90분이며, 36개월 미만 유아는 무료입니다. · 가격은 부가세 포함이며 매장별로 일부 상이할 수 있습니다. · 프라이빗 룸(궁실)은 8인 이상 예약 시 이용 가능합니다.</p>
+  </div>
+</section>
+
+<!-- ===== SPACE / 100PY ===== -->
+<section class="sec sec-dark" id="space">
+  <div class="wrap">
+    <div class="plan-head">
+      <div class="rv">
+        <span class="eyebrow">Standard Store · 100PY</span>
+        <h2 class="sec-title">100평 표준매장 설계</h2>
+        <p class="sec-lead">전용 330㎡(99.8평) · 22m × 15m 기준. 배식 동선과 주방 리필 동선을 완전히 분리한 밥상궁 표준 모델입니다. 도면의 존을 클릭하면 상세 정보가 표시됩니다.</p>
+      </div>
+      <div class="plan-tabs rv">
+        <button data-view="iso" class="on">3D 아이소메트릭 도면</button>
+        <button data-view="plan">2D 평면도</button>
+        <button data-view="aerial">3D 조감도 렌더</button>
+      </div>
+    </div>
+
+    <div class="plan-stage rv">
+      <div class="view on" id="view-iso">
+        <svg id="svg-iso" role="img" aria-label="밥상궁 100평 표준매장 3D 아이소메트릭 도면"></svg>
+        <div class="view-cap">밥상궁 표준매장 3D 아이소메트릭 · SCALE 1:100 · 전용 330.0㎡ (22.0m × 15.0m) · 96석</div>
+      </div>
+      <div class="view" id="view-plan">
+        <svg id="svg-plan" role="img" aria-label="밥상궁 100평 표준매장 2D 평면도"></svg>
+        <div class="view-cap">밥상궁 표준매장 평면도 · SCALE 1:100 · 치수 단위 mm · DWG NO. BSG-STD-100PY-A01</div>
+      </div>
+      <div class="view" id="view-aerial">
+        <img src="assets/aerial-cutaway.jpg" alt="밥상궁 100평 표준매장 3D 조감도">
+        <div class="view-cap">밥상궁 표준매장 3D 조감도 (지붕 절개 뷰) · 중앙 배식 아일랜드와 후방 일자형 주방, 우측 프라이빗 룸 배치</div>
+      </div>
+    </div>
+    <div class="plan-info">
+      <div class="legend" id="legend"></div>
+      <div class="zone-panel" id="zonePanel">
+        <div class="zt" id="zTitle">전체 매장</div>
+        <div class="za" id="zArea">330.0㎡ · 99.8평 · 96 SEATS</div>
+        <div class="zd" id="zDesc">22m × 15m 장방형 평면. 후방 일자형 주방, 중앙 아일랜드 배식존, 전면 객석의 3단 레이어 구조입니다.</div>
+        <div class="hint">도면의 존 또는 아래 범례를 클릭해 보세요</div>
+      </div>
+    </div>
+
+    <div class="area-grid">
+      <div class="rv">
+        <h3 style="font-size:22px;color:#fff;margin-bottom:20px">면적 배분 (Area Program)</h3>
+        <table class="area-tbl">
+          <thead><tr><th>ZONE</th><th>구성</th><th class="n">면적</th><th class="n">비중</th></tr></thead>
+          <tbody id="areaBody"></tbody>
+          <tfoot><tr><td colspan="2">전용면적 합계</td><td class="n">330.0㎡</td><td class="n">100%</td></tr></tfoot>
+        </table>
+      </div>
+      <div class="rv">
+        <h3 style="font-size:22px;color:#fff;margin-bottom:20px">설계 제원 (Specification)</h3>
+        <dl class="spec-list">
+          <div><dt>SEATS</dt><dd>96<small>석 (홀 80 + 룸 16)</small></dd></div>
+          <div><dt>KITCHEN RATIO</dt><dd>26.7<small>% (88.0㎡)</small></dd></div>
+          <div><dt>BUFFET LINE</dt><dd>22.4<small>m / 6개 존</small></dd></div>
+          <div><dt>MAIN AISLE</dt><dd>1.5<small>m (배식대 앞 1.4m)</small></dd></div>
+          <div><dt>DAILY GUEST</dt><dd>280<small>~420명 (회전 3.0~4.4)</small></dd></div>
+          <div><dt>STAFF</dt><dd>12<small>명 (홀 5 · 주방 7)</small></dd></div>
+        </dl>
+        <p class="flow-note">
+          <b>고객 동선</b> 입구 → 대기·POS → 착석 → 배식(시계 방향 1방향) → 퇴식대 → 출구.<br>
+          <b>리필 동선</b> 주방 팬트리 → 후방 서비스 통로(폭 1.4m) → 아일랜드 후면 리필도어. 고객 동선과 교차하지 않습니다.<br>
+          <b>위생 동선</b> 식자재 반입구와 퇴식·폐기 동선을 좌우로 분리하고, 세척실을 퇴식대 바로 뒤에 배치했습니다.<br>
+          <b>확장 옵션</b> 80평형은 프라이빗 룸 1실과 화로 라이브 코너를 축소, 120평형은 단체석 2조와 대기 라운지를 추가합니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Interior</span>
+      <h2 class="sec-title">공간이 곧 상차림입니다</h2>
+      <p class="sec-lead">짙은 호두나무와 한지 조명, 단청의 홍·청록 라인을 절제해 쓴 '모던 한옥' 인테리어. 모든 매장이 동일한 마감 규격으로 시공됩니다.</p>
+    </div>
+    <div class="gal rv">
+      <figure><img src="assets/exterior-night.jpg" alt="밥상궁 매장 외관"><figcaption><small>FACADE</small>처마 곡선을 재해석한 파사드와 황동 사인</figcaption></figure>
+      <figure><img src="assets/buffet-line.jpg" alt="밥상궁 배식대"><figcaption><small>BUFFET LINE</small>목재 캐노피와 황동 조명 아래의 배식 아일랜드</figcaption></figure>
+      <figure><img src="assets/private-room.jpg" alt="밥상궁 프라이빗 룸 궁실"><figcaption><small>PRIVATE ROOM</small>8인 규모의 프라이빗 룸 '궁실(宮室)'</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FRANCHISE ===== -->
+<section class="sec sec-alt" id="franchise">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Franchise</span>
+      <h2 class="sec-title">검증된 한 끼, 검증된 회전율</h2>
+      <p class="sec-lead">100평 표준 모델 하나로 통일합니다. 설계·주방기기·레시피·물류가 모두 표준화되어 있어, 점주는 운영에만 집중할 수 있습니다.</p>
+    </div>
+
+    <div class="fr-grid">
+      <div class="rv">
+        <h3 style="font-size:20px;margin-bottom:16px">개설 비용 (100평 / 330㎡ 기준)</h3>
+        <table class="cost-tbl">
+          <thead><tr><th>항목</th><th style="text-align:right">금액</th><th>비고</th></tr></thead>
+          <tbody>
+            <tr><td>가맹비</td><td class="n">1,500만원</td><td>5년 계약</td></tr>
+            <tr><td>교육비</td><td class="n">500만원</td><td>4주 실무 교육</td></tr>
+            <tr><td>인테리어</td><td class="n">3억원</td><td>평당 300만원</td></tr>
+            <tr><td>주방기기 · 집기</td><td class="n">1억 2,000만원</td><td>배식대·솥밥기·화로 포함</td></tr>
+            <tr><td>간판 · 사인물</td><td class="n">2,000만원</td><td>외부 채널 + 내부 사인</td></tr>
+            <tr><td>초도 물품 · 오픈 지원</td><td class="n">1,500만원</td><td>식자재·소모품·판촉</td></tr>
+          </tbody>
+          <tfoot><tr><td>합계 (점포 비용 별도)</td><td class="n">약 5억 2,000만원</td><td>부가세 별도</td></tr></tfoot>
+        </table>
+        <p class="price-note">※ 보증금·권리금·임차료는 상권에 따라 별도이며, 위 금액은 표준 견적 예시입니다. 실제 견적은 실측 후 확정됩니다.</p>
+
+        <div class="sim">
+          <h4>표준 매장 수익 시뮬레이션 (보수적 가정)</h4>
+          <div class="sim-row"><span>일 평균 방문 (평일 260명 / 주말 400명)</span><b>월 8,800명</b></div>
+          <div class="sim-row"><span>객단가 (평일·주말 가중 평균)</span><b>14,200원</b></div>
+          <div class="sim-row"><span>월 예상 매출</span><b>1억 2,500만원</b></div>
+          <div class="sim-row"><span>식재료비 (38%) · 인건비 (24%) · 임차/관리 (12%) · 로열티(3%)</span><b>합 77%</b></div>
+          <div class="sim-row"><span>월 예상 영업이익</span><b>약 2,800만원 (22%)</b></div>
+          <p style="font-size:11.8px;color:#9C9086;margin-top:14px;font-weight:300">※ 상권·임차 조건·인건비에 따라 실제 수익은 달라질 수 있는 시뮬레이션 수치이며, 수익을 보장하지 않습니다. 정보공개서상 수치와 다를 수 있습니다.</p>
+        </div>
+      </div>
+
+      <div class="rv">
+        <h3 style="font-size:20px;margin-bottom:6px">개설 프로세스</h3>
+        <div class="steps">
+          <div class="step"><div class="sn"></div><div><h4>가맹 상담 신청</h4><p>희망 지역과 예산을 남겨 주시면 1영업일 내 담당자가 연락드립니다.</p></div></div>
+          <div class="step"><div class="sn"></div><div><h4>상권 분석 · 입지 검토</h4><p>유동인구, 점심 상주인구, 경쟁 밀도, 주차 가능 대수를 기준으로 A/B/C 등급 리포트를 제공합니다.</p></div></div>
+          <div class="step"><div class="sn"></div><div><h4>정보공개서 제공 · 계약</h4><p>가맹사업법에 따라 계약 14일 전 정보공개서와 인근 가맹점 현황 문서를 제공합니다.</p></div></div>
+          <div class="step"><div class="sn"></div><div><h4>설계 · 시공 (6~8주)</h4><p>100평 표준 도면을 현장 실측에 맞춰 조정하고, 본사 지정 시공사가 마감 규격대로 시공합니다.</p></div></div>
+          <div class="step"><div class="sn"></div><div><h4>교육 · 오픈 (4주)</h4><p>조리 3주 + 운영 1주 교육 후, 오픈 2주간 본사 슈퍼바이저가 상주 지원합니다.</p></div></div>
+        </div>
+
+        <div class="form-card" style="margin-top:34px">
+          <h3 style="font-size:20px">가맹 상담 신청</h3>
+          <p style="font-size:13.5px;color:var(--ink-soft);font-weight:300;margin-top:6px">남겨 주신 정보는 가맹 상담 목적으로만 사용됩니다.</p>
+          <form class="fr-form" id="frForm">
+            <div><label for="f-name">성함</label><input id="f-name" type="text" placeholder="홍길동" required></div>
+            <div><label for="f-tel">연락처</label><input id="f-tel" type="tel" placeholder="010-0000-0000" required></div>
+            <div><label for="f-area">희망 지역</label><input id="f-area" type="text" placeholder="경기 성남시 분당구"></div>
+            <div><label for="f-budget">창업 예산</label>
+              <select id="f-budget">
+                <option>3억 ~ 5억</option><option selected>5억 ~ 7억</option><option>7억 이상</option><option>점포 보유 (별도 상담)</option>
+              </select>
+            </div>
+            <div class="full"><label for="f-memo">문의 내용</label><textarea id="f-memo" rows="3" placeholder="보유 점포 평수, 희망 오픈 시기 등을 적어 주세요."></textarea></div>
+            <div class="full"><button type="submit" class="btn btn-primary" style="width:100%">상담 신청하기</button></div>
+          </form>
+          <div class="form-ok" id="formOk">상담 신청이 접수되었습니다. 1영업일 내에 담당자가 연락드리겠습니다. (데모 페이지로 실제 전송되지 않습니다)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STORE ===== -->
+<section class="sec" id="store">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Store</span>
+      <h2 class="sec-title">매장 안내</h2>
+      <p class="sec-lead">직영 1호점을 기준으로 표준 운영 매뉴얼을 검증한 뒤 가맹점을 확장합니다.</p>
+    </div>
+    <div class="store-grid rv">
+      <div class="store"><span class="tag">직영 1호점</span><h4>밥상궁 판교점</h4>
+        <p>경기 성남시 분당구 판교역로 000, 1층</p><p>031-000-0000</p>
+        <div class="hr-line">11:00–21:30 (브레이크 15:00–17:00)<br>100평 · 96석 · 주차 30대</div></div>
+      <div class="store"><span class="tag">직영 2호점</span><h4>밥상궁 광화문점</h4>
+        <p>서울 종로구 종로 000, 지하 1층</p><p>02-000-0000</p>
+        <div class="hr-line">11:00–21:30 (브레이크 15:00–17:00)<br>98평 · 92석 · 건물 주차장 이용</div></div>
+      <div class="store"><span class="tag soon">2026 오픈 예정</span><h4>밥상궁 동탄 · 수원 · 부산 서면</h4>
+        <p>가맹 1호 상권 3곳 확정</p><p>가맹 문의 1588-0000</p>
+        <div class="hr-line">현재 수도권 남부 · 광역시 중심 상권 위주로<br>가맹 상담을 진행하고 있습니다.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div class="f-brand">
+        <svg class="mark"><use href="#logo-mark"/></svg>
+        <p style="font-family:'Gowun Batang',serif;font-size:19px;color:#fff;margin-bottom:10px">매일 차리는 궁의 밥상</p>
+        <p>밥상궁은 궁중 반상의 구성과 격식을 현대적인 한식뷔페로 옮긴 브랜드입니다. 당일 도정 솥밥과 60종의 반상찬을 90분의 한 끼로 차려 냅니다.</p>
+      </div>
+      <div><h5>BRAND</h5><ul><li><a href="#brand">브랜드 스토리</a></li><li><a href="#menu">메뉴 안내</a></li><li><a href="#space">100평 표준 설계</a></li><li><a href="#store">매장 안내</a></li></ul></div>
+      <div><h5>FRANCHISE</h5><ul><li><a href="#franchise">가맹 안내</a></li><li><a href="#franchise">개설 비용</a></li><li><a href="#franchise">상담 신청</a></li><li><a href="#market">시장 리포트</a></li></ul></div>
+      <div><h5>CONTACT</h5><ul><li>가맹 문의 1588-0000</li><li>고객 센터 1588-0001</li><li>franchise@bapsanggung.co.kr</li><li>평일 09:00 – 18:00</li></ul></div>
+    </div>
+    <div class="disclaimer">본 웹사이트는 '밥상궁 한식뷔페' 브랜드 기획안으로 제작된 데모입니다. 시장 데이터는 공정거래위원회 가맹사업 현황 통계 및 언론 보도를 인용했으며, 매장 이미지·도면·수익 시뮬레이션은 기획 목적의 가상 자료입니다. 실제 사업자 정보와 무관합니다.</div>
+    <div class="f-bot">
+      <span>© 2026 BAPSANGGUNG Korean Buffet. Concept Proposal.</span>
+      <span>개인정보처리방침 · 이용약관 · 정보공개서 열람 안내</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   BAPSANGGUNG - 100PY STANDARD STORE  (22.0m x 15.0m = 330m2)
+   Single data model -> 2D plan + 3D isometric renderer
+   ========================================================= */
+const W = 22, H = 15;
+
+const ZONES = [
+  { id:'boh',    name:'주방 · 후방지원', en:'BACK OF HOUSE', tint:'#DCE6E3', rect:[0,0,22,4],
+    parts:'저장·냉장냉동 / 메인 조리 / 배식 팬트리 / 세척·퇴식 / 직원실',
+    desc:'후방 전체를 일자형 22m 라인으로 묶어 식재료 반입 → 저장 → 전처리 → 조리 → 배식 팬트리 → 세척으로 이어지는 단방향 동선을 만들었습니다. 배식대 뒤편으로 바로 나가는 리필 개구부 3개소를 두어 고객 동선과 완전히 분리됩니다. 주방 비율 26.7%는 뷔페형 다품종 조리에 필요한 최소 기준입니다.' },
+  { id:'buffet', name:'뷔페 배식존', en:'BUFFET ZONE', tint:'#F5E3C4', rect:[0,4,18.4,5.2],
+    parts:'후식·음차 / 화로 라이브 / 즉석 전·면 / 핫푸드 A / 반상찬 B / 솥밥·국탕',
+    desc:'6개 존, 총 배식 라인 22.4m. 중앙에 2열 아일랜드를 두고 양끝에 화로 라이브와 솥밥 스테이션을 배치해 병목 없이 시계 방향 1방향 순환이 가능합니다. 배식대 앞 통로는 1.4m, 아일랜드 사이는 1.2m로 트레이 2인이 교차할 수 있습니다.' },
+  { id:'hall',   name:'홀 객석', en:'DINING HALL', tint:'#F8F2E4', rect:[0,9.2,18.4,5.8],
+    parts:'4인석 16 · 창가 2인석 8 · 벤치석',
+    desc:'80석(4인 16테이블 + 창가 2인 8테이블). 배식존과 객석 사이에 1.2m 횡방향 주통로를 확보해 배식 대기열이 식사 중인 손님을 방해하지 않습니다. 창가에는 붙박이 벤치를 두어 2인 손님 비율이 높은 점심 상권에 대응합니다.' },
+  { id:'room',   name:'프라이빗 룸 · 궁실', en:'PRIVATE ROOM', tint:'#F0DCD5', rect:[18.4,4,3.6,7.6],
+    parts:'궁실1(8인) · 궁실2(8인)',
+    desc:'3.6m × 3.0m × 2실, 각 8인. 한지 슬라이딩 도어로 개방·폐쇄가 가능해 회식·돌잔치·가족 모임 예약을 받습니다. 객단가가 가장 높은 좁 모이는 공간으로, 주말 예약제로 운영합니다.' },
+  { id:'wc',     name:'화장실 · 파우더', en:'RESTROOM', tint:'#DFE6EA', rect:[18.4,11.6,3.6,3.4],
+    parts:'남 · 여 · 파우더룸',
+    desc:'홀 최후방에 배치해 식사 공간과 시선·냄새를 차단했습니다. 뷔페 특성상 이용 빈도가 높아 남·여 분리 및 세면대 2구를 표준으로 합니다.' },
+  { id:'entry',  name:'입구 · 대기 · 카운터', en:'ENTRANCE', tint:'#EBE2D2', rect:[0,12.4,5.4,2.6],
+    parts:'풍제실 · 대기 벤치 · POS · 키오스크 2대',
+    desc:'선불제 운영. 키오스크 2대로 피크타임 결제 병목을 없애고, 풍제실을 두어 계절별 냉·난방 손실과 대기열 노출을 치우게 합니다. 대기 벤치는 8인석 규모.' }
+];
+
+/* ---- furniture / fixtures : [x, y, w, d, h, kind, zone] ---- */
+const FIX = [];
+const add = (x,y,w,d,h,kind,zone,label) => FIX.push({x,y,w,d,h,kind,zone,label});
+
+/* perimeter */
+add(0,0,22,0.2,3.1,'wall','boh');
+add(0,0,0.2,15,3.1,'wall','boh');
+add(21.8,0.2,0.2,14.8,0.45,'cut','room');
+add(0.2,14.8,21.6,0.2,0.45,'cut','hall');
+/* BOH partitions */
+add(3.9,0.2,0.15,3.7,2.6,'wall','boh');
+add(11.9,0.2,0.15,3.7,2.6,'wall','boh');
+add(15.9,0.2,0.15,3.7,2.6,'wall','boh');
+add(19.4,0.2,0.15,3.7,2.6,'wall','boh');
+add(0.2,3.85,5.8,0.15,2.6,'wall','boh');
+add(7.6,3.85,5.0,0.15,2.6,'wall','boh');
+add(14.0,3.85,3.0,0.15,2.6,'wall','boh');
+add(18.2,3.85,3.6,0.15,2.6,'wall','boh');
+/* BOH equipment */
+add(0.4,0.4,1.5,3.2,1.95,'equip','boh','냉장·냉동');
+add(2.3,0.4,1.4,1.3,1.6,'equip','boh','건품고');
+add(4.3,0.4,7.2,1.0,0.9,'equip','boh','핫라인');
+add(5.0,2.3,5.8,1.1,0.9,'equip','boh','작업대');
+add(12.2,0.4,3.4,1.0,0.9,'equip','boh','배식준비');
+add(12.2,2.4,3.4,1.0,0.9,'equip','boh','배식준비');
+add(16.1,0.4,3.0,1.1,0.95,'equip','boh','세척기');
+add(16.1,2.4,3.0,1.0,0.9,'equip','boh','퇴식 정리');
+add(19.7,0.5,1.9,1.1,0.75,'equip','boh','사무');
+add(19.7,2.5,1.9,0.7,1.8,'equip','boh','락커');
+/* return stations */
+add(5.2,4.25,1.6,0.7,0.95,'counter','buffet','퇴식대');
+add(16.6,4.25,1.6,0.7,0.95,'counter','buffet','퇴식대');
+/* buffet counters */
+add(0.5,5.4,1.2,3.4,0.92,'counter','buffet','후식·음차');
+add(3.2,5.4,2.6,1.5,0.92,'counter','buffet','화로 라이브');
+add(3.2,7.4,2.6,1.4,0.92,'counter','buffet','즉석 전·면');
+add(7.2,5.4,5.4,1.4,0.92,'counter','buffet','핫푸드 A · 주찬');
+add(7.2,7.4,5.4,1.4,0.92,'counter','buffet','반상찬 B · 나물·김치');
+add(14.0,5.4,3.0,3.4,0.92,'counter','buffet','솥밥·국탕');
+/* planters */
+[[6.45,5.5],[6.45,8.65],[13.05,5.5],[13.05,8.65]].forEach(p=>add(p[0],p[1],0.5,0.5,1.1,'plant','buffet'));
+/* private rooms */
+add(18.25,5.4,0.15,3.0,2.5,'wall','room');
+add(18.4,5.25,3.6,0.15,2.5,'wall','room');
+add(18.4,8.25,3.6,0.15,2.5,'wall','room');
+add(18.25,8.7,0.15,2.9,2.5,'wall','room');
+add(18.4,11.45,3.6,0.15,2.5,'wall','room');
+/* restroom */
+add(18.25,11.8,0.15,3.0,2.5,'wall','wc');
+add(18.4,11.75,3.6,0.15,2.5,'wall','wc');
+add(20.05,11.9,0.12,2.9,2.4,'wall','wc');
+add(18.6,12.1,1.2,0.5,0.85,'equip','wc','세면대');
+add(20.3,12.1,1.3,0.5,0.85,'equip','wc','세면대');
+/* entrance */
+add(2.9,12.4,0.15,2.6,2.5,'wall','entry');
+add(0.2,12.35,2.7,0.15,2.5,'wall','entry');
+add(0.35,12.7,0.65,2.0,0.45,'bench','entry','대기');
+add(3.35,13.85,2.4,0.85,1.05,'pos','entry','POS 카운터');
+add(3.45,12.75,0.45,0.45,1.45,'pos','entry','키오스크');
+add(4.25,12.75,0.45,0.45,1.45,'pos','entry','키오스크');
+/* window bench */
+add(5.6,14.2,12.6,0.55,0.45,'bench','hall','창가 벤치');
+
+/* ---- tables & chairs ---- */
+const CH = 0.44, CD = 0.42;
+function table4(cx,cy){
+  add(cx-0.6, cy-0.375, 1.2, 0.75, 0.73, 'wood','hall');
+  [-0.3,0.3].forEach(dx=>{
+    add(cx+dx-CH/2, cy-0.375-0.06-CD, CH, CD, 0.46,'chair','hall');
+    add(cx+dx-CH/2, cy+0.375+0.06,   CH, CD, 0.46,'chair','hall');
+  });
+}
+function table2(cx,cy){
+  add(cx-0.35, cy-0.35, 0.7, 0.7, 0.73,'wood','hall');
+  add(cx-CH/2, cy-0.35-0.06-CD, CH, CD, 0.46,'chair','hall');
+}
+function table8(cx,cy){
+  add(cx-1.0, cy-0.475, 2.0, 0.95, 0.73,'wood','room');
+  [-0.65,0,0.65].forEach(dx=>{
+    add(cx+dx-CH/2, cy-0.475-0.06-CD, CH, CD, 0.46,'chair','room');
+    add(cx+dx-CH/2, cy+0.475+0.06,   CH, CD, 0.46,'chair','room');
+  });
+  [-1.0,1.0].forEach(dx=>add(cx+dx+(dx<0?-0.06-CD:0.06), cy-CH/2, CD, CH, 0.46,'chair','room'));
+}
+const rowX = Array.from({length:8},(_,i)=>3.8+i*1.95);
+rowX.forEach(x=>table4(x,10.8));
+rowX.forEach(x=>table4(x,12.45));
+Array.from({length:8},(_,i)=>6.0+i*1.7).forEach(x=>table2(x,13.85));
+table8(20.2,6.9); table8(20.2,10.15);
+
+/* ================== RENDERERS ================== */
+const PAL = {
+  wall:  ['#F4EEE2','#D3C9B8','#B9AE9D'],
+  cut:   ['#DCD2C0','#C3B9A8','#ABA191'],
+  equip: ['#CDD5D8','#A9B2B6','#8F989C'],
+  counter:['#E6EAEC','#9A7F5B','#7B6345'],
+  wood:  ['#D9B68A','#B08A5E','#8D6A45'],
+  chair: ['#754F31','#5A3C25','#432C1A'],
+  bench: ['#96503F','#78402F','#5E3226'],
+  plant: ['#5F8C5F','#487049','#39593B'],
+  pos:   ['#A83A38','#882A29','#6C1F1E']
+};
+const esc = s => (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+
+/* ---------- 3D ISOMETRIC ---------- */
+function renderIso(){
+  const S = 38, KX = Math.cos(Math.PI/6)*S, KY = Math.sin(Math.PI/6)*S;
+  const P = (x,y,z) => [ (x-y)*KX, (x+y)*KY - (z||0)*S ];
+  const pp = a => a.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+  let out = '';
+
+  out += '<polygon points="'+pp([P(0,0,0),P(W,0,0),P(W,H,0),P(0,H,0)])+'" fill="#E9DFCC"/>';
+  ZONES.forEach(z=>{
+    const r=z.rect;
+    out += '<polygon class="zseg" data-zone="'+z.id+'" points="'+pp([P(r[0],r[1],0),P(r[0]+r[2],r[1],0),P(r[0]+r[2],r[1]+r[3],0),P(r[0],r[1]+r[3],0)])+'" fill="'+z.tint+'" stroke="#CCBFA9" stroke-width="1"/>';
+  });
+  for(let i=1;i<W;i++){ const a=P(i,0,0),b=P(i,H,0); out += '<line x1="'+a[0].toFixed(1)+'" y1="'+a[1].toFixed(1)+'" x2="'+b[0].toFixed(1)+'" y2="'+b[1].toFixed(1)+'" stroke="rgba(90,75,55,.07)" stroke-width="1"/>'; }
+  for(let j=1;j<H;j++){ const a=P(0,j,0),b=P(W,j,0); out += '<line x1="'+a[0].toFixed(1)+'" y1="'+a[1].toFixed(1)+'" x2="'+b[0].toFixed(1)+'" y2="'+b[1].toFixed(1)+'" stroke="rgba(90,75,55,.07)" stroke-width="1"/>'; }
+
+  const items = FIX.slice().sort((a,b)=>((a.x+a.w/2)+(a.y+a.d/2))-((b.x+b.w/2)+(b.y+b.d/2)));
+  items.forEach(it=>{
+    const c = PAL[it.kind] || PAL.equip;
+    const x0=it.x, y0=it.y, x1=it.x+it.w, y1=it.y+it.d, h=it.h;
+    const top=[P(x0,y0,h),P(x1,y0,h),P(x1,y1,h),P(x0,y1,h)];
+    const fy =[P(x0,y1,h),P(x1,y1,h),P(x1,y1,0),P(x0,y1,0)];
+    const fx =[P(x1,y0,h),P(x1,y1,h),P(x1,y1,0),P(x1,y0,0)];
+    out += '<g class="zseg" data-zone="'+it.zone+'">'
+        + '<polygon points="'+pp(fy)+'" fill="'+c[2]+'"/>'
+        + '<polygon points="'+pp(fx)+'" fill="'+c[1]+'"/>'
+        + '<polygon points="'+pp(top)+'" fill="'+c[0]+'" stroke="rgba(20,15,10,.18)" stroke-width=".6"/>'
+        + '</g>';
+  });
+
+  ZONES.forEach(z=>{
+    const r=z.rect, p=P(r[0]+r[2]/2, r[1]+r[3]/2, 0);
+    const wpx = Math.max(z.name.length*14+26, 124);
+    out += '<g class="zlab zseg" data-zone="'+z.id+'" transform="translate('+p[0].toFixed(1)+','+p[1].toFixed(1)+')">'
+      + '<rect x="'+(-wpx/2)+'" y="-19" width="'+wpx+'" height="38" rx="3" fill="rgba(20,17,14,.84)"/>'
+      + '<text x="0" y="-2" text-anchor="middle" fill="#fff" font-size="14.5" font-family="Gowun Batang,serif">'+esc(z.name)+'</text>'
+      + '<text x="0" y="13" text-anchor="middle" fill="#C1962F" font-size="9.5" letter-spacing="1.6">'+z.en+'</text></g>';
+  });
+
+  const d1=P(0,H+0.9,0), d2=P(W,H+0.9,0), d3=P(W+0.9,0,0), d4=P(W+0.9,H,0);
+  out += '<line x1="'+d1[0].toFixed(1)+'" y1="'+d1[1].toFixed(1)+'" x2="'+d2[0].toFixed(1)+'" y2="'+d2[1].toFixed(1)+'" stroke="#C1962F" stroke-width="1.4"/>';
+  out += '<line x1="'+d3[0].toFixed(1)+'" y1="'+d3[1].toFixed(1)+'" x2="'+d4[0].toFixed(1)+'" y2="'+d4[1].toFixed(1)+'" stroke="#C1962F" stroke-width="1.4"/>';
+  const m1=P(W/2-0.6,H+2.0,0), m2=P(W+2.0,H/2-0.6,0);
+  out += '<text x="'+m1[0].toFixed(1)+'" y="'+m1[1].toFixed(1)+'" text-anchor="middle" fill="#C1962F" font-size="15" font-family="Gowun Batang,serif">22.0 m</text>';
+  out += '<text x="'+m2[0].toFixed(1)+'" y="'+m2[1].toFixed(1)+'" text-anchor="middle" fill="#C1962F" font-size="15" font-family="Gowun Batang,serif">15.0 m</text>';
+
+  const svg = document.getElementById('svg-iso');
+  svg.setAttribute('viewBox','-550 -148 1350 905');
+  svg.innerHTML = '<rect x="-550" y="-148" width="1350" height="905" fill="#12100E"/>' + out;
+}
+
+/* ---------- 2D PLAN ---------- */
+function renderPlan(){
+  const SC=40, OX=96, OY=90;
+  const X=v=>(OX+v*SC), Y=v=>(OY+v*SC);
+  const R=(x,y,w,d,fill,stroke,sw)=>'<rect x="'+X(x).toFixed(1)+'" y="'+Y(y).toFixed(1)+'" width="'+(w*SC).toFixed(1)+'" height="'+(d*SC).toFixed(1)+'" fill="'+fill+'"'+(stroke&&stroke!=='none'?' stroke="'+stroke+'" stroke-width="'+(sw||1)+'"':'')+'/>';
+  const T=(x,y,t,size,fill,anchor,extra)=>'<text x="'+X(x).toFixed(1)+'" y="'+Y(y).toFixed(1)+'" font-size="'+(size||12)+'" fill="'+(fill||'#3A322C')+'" text-anchor="'+(anchor||'middle')+'" '+(extra||'')+'>'+esc(t)+'</text>';
+  let out='';
+
+  out += R(0,0,W,H,'#FBF7EE','#8C8172',1);
+  ZONES.forEach(z=>{
+    const r=z.rect;
+    out += '<g class="zseg" data-zone="'+z.id+'">'+R(r[0],r[1],r[2],r[3],z.tint,'#B6A891',1.2)+'</g>';
+  });
+
+  const fillOf={wall:'#3A322C',cut:'#8C8172',equip:'#C4CDD1',counter:'#D8DEE1',wood:'#D9B68A',chair:'#BFA184',bench:'#C08A78',plant:'#8CB08C',pos:'#C56A67'};
+  FIX.forEach(it=>{
+    const f = fillOf[it.kind]||'#CCCCCC';
+    const st = (it.kind==='wall'||it.kind==='cut') ? 'none' : '#6E645A';
+    out += '<g class="zseg" data-zone="'+it.zone+'">'+R(it.x,it.y,it.w,it.d,f,st,it.kind==='chair'?0.5:0.8)+'</g>';
+  });
+
+  const lab=(x,y,t,s,c)=>{ out+=T(x,y,t,s||11.5,c||'#4A4038'); };
+  ZONES.forEach(z=>{
+    const r=z.rect; let cx=r[0]+r[2]/2;
+    let cy = r[1]+0.62, nm = z.name, sz = 15;
+    if(z.id==='hall') cy = 9.75; if(z.id==='buffet') cy=4.78;
+    if(z.id==='boh'){ cy=3.68; }
+    if(z.id==='entry'){ cy=13.2; nm='입구·대기'; sz=13.5; cx=1.45; }
+    if(z.id==='wc'){ cy=12.05; nm='화장실'; sz=13.5; }
+    if(z.id==='room') cy=4.55;
+    if(z.id==='boh'){
+      out += T(cx, cy, nm+'   BACK OF HOUSE  |  '+areaOf(z).toFixed(1)+'\u33a1', 14, '#2C2621','middle','font-family="Gowun Batang,serif" font-weight="700"');
+    } else {
+      out += T(cx, cy, nm, sz, '#2C2621','middle','font-family="Gowun Batang,serif" font-weight="700"');
+      out += T(cx, cy+0.42, z.en+'  |  '+areaOf(z).toFixed(1)+'\u33a1', 10.5, '#7A6E62');
+    }
+  });
+  lab(2.0,2.2,'저장 · 냉장냉동'); lab(8.0,2.2,'메인 조리',12.5); lab(14.0,2.2,'배식 팬트리');
+  lab(17.7,2.2,'세척·퇴식'); lab(20.7,2.2,'직원실');
+  lab(1.1,7.3,'후식',10); lab(4.5,6.4,'화로 라이브',11); lab(4.5,8.3,'즉석 전·면',11);
+  lab(9.9,6.25,'핫푸드 A · 주찬',12); lab(9.9,8.25,'반상찬 B · 나물·김치',12);
+  lab(15.5,7.3,'솥밥·국탕',11.5);
+  lab(6.0,4.78,'퇴식대',10); lab(17.4,4.78,'퇴식대',10);
+  lab(20.2,6.95,'궁실 1 · 8인',11.5); lab(20.2,10.2,'궁실 2 · 8인',11.5);
+  lab(19.2,13.8,'남',11); lab(21.0,13.8,'여',11);
+  lab(1.5,14.45,'대기 벤치',10.5); lab(4.55,13.55,'POS',10.5);
+  lab(11.9,14.68,'창가 벤치석',10.5,'#6B5F54');
+
+  out += '<defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#9E2A2B"/></marker>'
+      +  '<marker id="ag" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#1F6F65"/></marker></defs>';
+  const flow=(pts,color,mk)=>'<polyline points="'+pts.map(p=>X(p[0]).toFixed(1)+','+Y(p[1]).toFixed(1)).join(' ')+'" fill="none" stroke="'+color+'" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#'+mk+')"/>';
+  out += flow([[2.1,14.45],[2.1,11.9],[6.45,11.9],[6.45,9.9],[6.45,7.05],[13.05,7.05],[13.05,9.9],[17.5,9.9],[17.5,5.3]],'#9E2A2B','ah');
+  out += flow([[13.6,3.4],[13.6,4.7],[9.9,4.7],[9.9,5.3]],'#1F6F65','ag');
+  out += T(6.7,11.75,'고객 배식 동선 (1방향)',10,'#9E2A2B','start');
+  out += T(14.2,4.42,'리필 동선',10,'#1F6F65','start');
+
+  const dimH=(x1,x2,y,txt)=>{
+    let s='<line x1="'+X(x1)+'" y1="'+Y(y)+'" x2="'+X(x2)+'" y2="'+Y(y)+'" stroke="#8C8172" stroke-width="1"/>';
+    s+='<line x1="'+X(x1)+'" y1="'+(Y(y)-5)+'" x2="'+X(x1)+'" y2="'+(Y(y)+5)+'" stroke="#8C8172"/>';
+    s+='<line x1="'+X(x2)+'" y1="'+(Y(y)-5)+'" x2="'+X(x2)+'" y2="'+(Y(y)+5)+'" stroke="#8C8172"/>';
+    s+='<text x="'+((X(x1)+X(x2))/2)+'" y="'+(Y(y)-8)+'" font-size="11.5" fill="#5E544B" text-anchor="middle">'+txt+'</text>';
+    return s;
+  };
+  const dimV=(y1,y2,x,txt)=>{
+    let s='<line x1="'+X(x)+'" y1="'+Y(y1)+'" x2="'+X(x)+'" y2="'+Y(y2)+'" stroke="#8C8172" stroke-width="1"/>';
+    s+='<line x1="'+(X(x)-5)+'" y1="'+Y(y1)+'" x2="'+(X(x)+5)+'" y2="'+Y(y1)+'" stroke="#8C8172"/>';
+    s+='<line x1="'+(X(x)-5)+'" y1="'+Y(y2)+'" x2="'+(X(x)+5)+'" y2="'+Y(y2)+'" stroke="#8C8172"/>';
+    const my=(Y(y1)+Y(y2))/2;
+    s+='<text transform="translate('+(X(x)-9)+','+my+') rotate(-90)" font-size="11.5" fill="#5E544B" text-anchor="middle">'+txt+'</text>';
+    return s;
+  };
+  out += dimH(0,18.4,-0.62,'18,400') + dimH(18.4,22,-0.62,'3,600') + dimH(0,22,-1.5,'22,000');
+  out += dimV(0,4,-0.62,'4,000') + dimV(4,9.2,-0.62,'5,200') + dimV(9.2,15,-0.62,'5,800') + dimV(0,15,-1.5,'15,000');
+
+  out += '<g transform="translate('+X(21.2)+','+Y(-1.55)+')"><circle r="16" fill="none" stroke="#8C8172"/><path d="M0,-13 L5,7 L0,2 L-5,7 Z" fill="#9E2A2B"/><text y="-20" text-anchor="middle" font-size="10" fill="#5E544B">N</text></g>';
+  out += '<g transform="translate('+X(0)+','+Y(15.6)+')"><rect width="'+(2*SC)+'" height="6" fill="#3A322C"/><rect x="'+(2*SC)+'" width="'+(2*SC)+'" height="6" fill="#FBF7EE" stroke="#3A322C"/><rect x="'+(4*SC)+'" width="'+(2*SC)+'" height="6" fill="#3A322C"/><text y="22" font-size="11" fill="#5E544B">0</text><text x="'+(6*SC)+'" y="22" font-size="11" fill="#5E544B" text-anchor="middle">6m</text></g>';
+  const tbx=X(13.0), tby=Y(15.25);
+  out += '<g transform="translate('+tbx+','+tby+')"><rect width="'+(9*SC)+'" height="80" fill="#FBF7EE" stroke="#3A322C"/>'
+      + '<line x1="0" y1="27" x2="'+(9*SC)+'" y2="27" stroke="#8C8172"/>'
+      + '<line x1="'+(4.5*SC)+'" y1="27" x2="'+(4.5*SC)+'" y2="80" stroke="#8C8172"/>'
+      + '<text x="12" y="19" font-size="13.5" font-family="Gowun Batang,serif" font-weight="700" fill="#231C19">밥상궁 한식뷔페 · 100평 표준매장 평면도</text>'
+      + '<text x="12" y="46" font-size="11" fill="#5E544B">DWG NO. BSG-STD-100PY-A01</text>'
+      + '<text x="12" y="64" font-size="11" fill="#5E544B">SCALE 1:100 (단위 mm)</text>'
+      + '<text x="'+(4.5*SC+12)+'" y="46" font-size="11" fill="#5E544B">AREA 330.0\u33a1 / 99.8\ud3c9</text>'
+      + '<text x="'+(4.5*SC+12)+'" y="64" font-size="11" fill="#5E544B">SEATS 96 (HALL 80 + ROOM 16)</text></g>';
+
+  const svg=document.getElementById('svg-plan');
+  svg.setAttribute('viewBox','0 0 1060 810');
+  svg.innerHTML='<rect width="1060" height="810" fill="#F3EDE1"/>'+out;
+}
+
+/* ---------- helpers ---------- */
+function areaOf(z){
+  let a = z.rect[2]*z.rect[3];
+  if(z.id==='hall'){ const e=ZONES.find(v=>v.id==='entry'); a -= e.rect[2]*e.rect[3]; }
+  return a;
+}
+function buildAreaTable(){
+  const body=document.getElementById('areaBody'), total=330;
+  body.innerHTML = ZONES.map(z=>{
+    const a=areaOf(z), p=a/total*100;
+    return '<tr class="zrow" data-zone="'+z.id+'" style="cursor:pointer"><td><b style="color:#fff">'+z.name+'</b><div class="bar"><i style="width:'+p.toFixed(1)+'%"></i></div></td>'
+      + '<td style="color:#9C9086;font-size:12px">'+z.parts+'</td>'
+      + '<td class="n">'+a.toFixed(1)+'\u33a1</td><td class="n">'+p.toFixed(1)+'%</td></tr>';
+  }).join('');
+}
+function buildLegend(){
+  document.getElementById('legend').innerHTML =
+    '<button data-zone="all" class="on"><i style="background:#C1962F"></i>전체 보기</button>' +
+    ZONES.map(z=>'<button data-zone="'+z.id+'"><i style="background:'+z.tint+'"></i>'+z.name+'</button>').join('');
+}
+function selectZone(id){
+  const z = ZONES.find(v=>v.id===id);
+  document.querySelectorAll('#legend button').forEach(b=>b.classList.toggle('on', b.dataset.zone===(z?id:'all')));
+  document.querySelectorAll('.zseg').forEach(el=>{ el.style.opacity = (!z || el.dataset.zone===id) ? '1' : '.25'; });
+  const pn=document.getElementById('zonePanel');
+  if(z){
+    pn.querySelector('#zTitle').textContent=z.name;
+    pn.querySelector('#zArea').textContent=areaOf(z).toFixed(1)+'\u33a1 · '+(areaOf(z)/3.3058).toFixed(1)+'\ud3c9 · '+z.en;
+    pn.querySelector('#zDesc').textContent=z.desc;
+  }else{
+    pn.querySelector('#zTitle').textContent='전체 매장';
+    pn.querySelector('#zArea').textContent='330.0\u33a1 · 99.8\ud3c9 · 96 SEATS';
+    pn.querySelector('#zDesc').textContent='22m \u00d7 15m 장방형 평면. 후방 일자형 주방, 중앙 아일랜드 배식존, 전면 객석의 3단 레이어 구조입니다.';
+  }
+}
+
+/* ---------- init ---------- */
+renderIso(); renderPlan(); buildAreaTable(); buildLegend(); selectZone(null);
+
+document.addEventListener('click', e=>{
+  const lg  = e.target.closest('#legend button');
+  if(lg){ selectZone(lg.dataset.zone==='all'?null:lg.dataset.zone); return; }
+  const row = e.target.closest('.zrow');
+  if(row){ selectZone(row.dataset.zone); document.getElementById('space').scrollIntoView({behavior:'smooth'}); return; }
+  const seg = e.target.closest('.zseg');
+  if(seg){ selectZone(seg.dataset.zone); }
+});
+
+document.querySelectorAll('.plan-tabs button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.plan-tabs button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    document.querySelectorAll('.plan-stage .view').forEach(v=>v.classList.remove('on'));
+    document.getElementById('view-'+b.dataset.view).classList.add('on');
+  });
+});
+
+const navEl=document.getElementById('nav');
+const onScroll=()=>navEl.classList.toggle('solid', window.scrollY>60);
+onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+document.getElementById('burger').addEventListener('click',()=>document.getElementById('navmenu').classList.toggle('open'));
+document.querySelectorAll('#navmenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navmenu').classList.remove('open')));
+
+const io=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+document.getElementById('frForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  document.getElementById('formOk').style.display='block';
+  e.target.reset();
+});
+</script>
+</body>
+</html>
