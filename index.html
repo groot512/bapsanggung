@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>밥상궁 한식뷔페 | 매일 차리는 궁의 밥상</title>
 <meta name="description" content="밥상궁 한식뷔페 - 궁중 반상의 격을 매일의 가격으로. 100평 표준 매장 3D 도면·조감도, 메뉴, 가맹 안내." />
-<link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/logo/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --jusil:#9E2A2B;        /* 주칠 홍 - Primary */
-  --jusil-dark:#6E1B1C;
+  --jusil:#92141D;        /* 주칠 홍 - Primary (로고 인장 색) */
+  --jusil-dark:#6B0E15;
   --dancheong:#1F6F65;    /* 단청 청록 - Secondary */
-  --gold:#C1962F;         /* 유기 금 - Accent */
-  --gold-light:#E3C878;
+  --gold:#C9A044;         /* 유기 금 - Accent */
+  --gold-light:#F1CE75;
   --ink:#231C19;          /* 먹 */
   --ink-soft:#5A4F48;
   --hanji:#FAF5EC;        /* 한지 바탕 */
@@ -56,13 +56,11 @@ header.nav{
 }
 header.nav.solid{background:rgba(250,245,236,.94);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
 .nav-in{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:flex;align-items:center;gap:11px}
-.brand .mark{width:40px;height:40px;flex:none}
-.brand .bt{display:block;font-family:'Gowun Batang',serif;font-weight:700;font-size:21px;letter-spacing:.06em;line-height:1.15}
-.brand .bs{display:block;font-size:9px;letter-spacing:.24em;color:var(--gold);font-weight:700;line-height:1}
-.nav .brand .bt,.nav .brand .bs{color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.45)}
-.nav.solid .brand .bt{color:var(--ink);text-shadow:none}
-.nav.solid .brand .bs{color:var(--jusil);text-shadow:none}
+.brand{display:flex;align-items:center}
+.brand img{height:46px;width:auto;display:block}
+.nav .brand .logo-light{display:none}
+.nav.solid .brand .logo-dark{display:none}
+.nav.solid .brand .logo-light{display:block}
 .nav-menu{display:flex;align-items:center;gap:30px;font-size:14.5px;font-weight:500}
 .nav-menu a{color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.5);transition:color .2s}
 .nav.solid .nav-menu a{color:var(--ink);text-shadow:none}
@@ -89,9 +87,9 @@ header.nav.solid{background:rgba(250,245,236,.94);backdrop-filter:blur(14px);box
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:url('assets/hero-bansang.jpg') center/cover no-repeat;transform:scale(1.04)}
 .hero-bg::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(105deg,rgba(20,14,11,.92) 0%,rgba(20,14,11,.72) 42%,rgba(20,14,11,.25) 100%)}
+  background:linear-gradient(105deg,rgba(18,12,9,.94) 0%,rgba(18,12,9,.82) 46%,rgba(18,12,9,.42) 100%)}
 .hero-in{position:relative;z-index:2;color:#fff;padding:120px 0 70px;max-width:760px}
-.hero-mark{width:96px;height:96px;margin-bottom:26px}
+.hero-mark{width:min(420px,78vw);height:auto;margin-bottom:30px;filter:drop-shadow(0 8px 30px rgba(0,0,0,.45))}
 .hero h1{font-size:clamp(40px,6.4vw,76px);line-height:1.2;letter-spacing:-.02em;margin-bottom:22px;text-shadow:0 6px 40px rgba(0,0,0,.5)}
 .hero h1 em{font-style:normal;color:var(--gold-light)}
 .hero-sub{font-size:clamp(15px,1.7vw,18px);font-weight:300;color:#E2D8CB;max-width:540px;margin-bottom:34px}
@@ -140,7 +138,8 @@ header.nav.solid{background:rgba(250,245,236,.94);backdrop-filter:blur(14px);box
 .logo-lab{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;margin-top:88px;
   background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:52px}
 .logo-stage{display:flex;flex-direction:column;align-items:center;gap:26px}
-.logo-stage .big{width:200px;height:200px}
+.logo-stage .big{width:200px;height:auto}
+.logo-stage .lockup{width:100%;max-width:340px;height:auto}
 .logo-lock{text-align:center}
 .logo-lock .kw{font-family:'Gowun Batang',serif;font-size:44px;letter-spacing:.16em;color:#fff;line-height:1}
 .logo-lock .en{font-size:10.5px;letter-spacing:.42em;color:var(--gold);margin-top:10px}
@@ -282,7 +281,7 @@ footer{background:#15120F;color:#9C9086;padding:70px 0 34px;font-size:13.5px;fon
 .f-top ul{list-style:none}
 .f-top li{padding:4px 0}
 .f-top li a:hover{color:#fff}
-.f-brand .mark{width:52px;height:52px;margin-bottom:16px}
+.f-brand .mark{width:54px;height:auto;margin-bottom:16px}
 .f-brand p{max-width:300px;line-height:1.8}
 .f-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px;font-size:12px;color:#6E645C}
 .disclaimer{background:rgba(255,255,255,.04);border-left:2px solid var(--gold);padding:14px 18px;margin-top:26px;font-size:11.8px;line-height:1.75;color:#8A7E74}
@@ -320,33 +319,12 @@ footer{background:#15120F;color:#9C9086;padding:70px 0 34px;font-size:13.5px;fon
 </head>
 <body>
 
-<!-- ===== SVG SPRITE : LOGO ===== -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="logo-mark" viewBox="0 0 100 100">
-    <rect x="3" y="3" width="94" height="94" rx="16" fill="#9E2A2B"/>
-    <rect x="9.5" y="9.5" width="81" height="81" rx="11" fill="none" stroke="#C1962F" stroke-width="1.4" opacity=".85"/>
-    <!-- 처마 / eave -->
-    <path d="M9 29.5 C 24 46, 76 46, 91 29.5 L 81 20 L 19 20 Z" fill="#E3C878"/>
-    <path d="M26 26.5 C 34 34, 66 34, 74 26.5" fill="none" stroke="#9E2A2B" stroke-width="1.4" opacity=".55"/>
-    <circle cx="50" cy="15.5" r="2.5" fill="#E3C878"/>
-    <!-- 김 / steam -->
-    <path d="M44.8 55 c 3.2 -3.4 -3.2 -6 0 -9.4" fill="none" stroke="#E3C878" stroke-width="2" stroke-linecap="round" opacity=".92"/>
-    <path d="M55.2 55 c 3.2 -3.4 -3.2 -6 0 -9.4" fill="none" stroke="#E3C878" stroke-width="2" stroke-linecap="round" opacity=".92"/>
-    <!-- 유기 밥그릇 / brass rice bowl -->
-    <path d="M32 59 h36 a18 18 0 0 1 -36 0 z" fill="#E3C878"/>
-    <rect x="29" y="56.2" width="42" height="3.4" rx="1.7" fill="#E3C878"/>
-    <!-- 소반 / small table -->
-    <rect x="22" y="78.6" width="56" height="3.6" rx="1.8" fill="#E3C878"/>
-    <path d="M28.5 82.2 l -2.2 5.2 M71.5 82.2 l 2.2 5.2" stroke="#E3C878" stroke-width="2.6" stroke-linecap="round"/>
-  </symbol>
-</svg>
-
 <!-- ===== NAV ===== -->
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a href="#top" class="brand">
-      <svg class="mark"><use href="#logo-mark"/></svg>
-      <span><span class="bt">밥상궁</span><span class="bs">BAPSANGGUNG</span></span>
+    <a href="#top" class="brand" aria-label="밥상궁 홈으로">
+      <img class="logo-dark" src="assets/logo/logo-full-light.png" alt="밥상궁 BAPSANGGUNG">
+      <img class="logo-light" src="assets/logo/logo-full.png" alt="밥상궁 BAPSANGGUNG">
     </a>
     <nav class="nav-menu" id="navmenu">
       <a href="#market">시장 인사이트</a>
@@ -364,7 +342,7 @@ footer{background:#15120F;color:#9C9086;padding:70px 0 34px;font-size:13.5px;fon
 <section class="hero" id="top">
   <div class="hero-bg"></div>
   <div class="wrap hero-in">
-    <svg class="hero-mark"><use href="#logo-mark"/></svg>
+    <img class="hero-mark" src="assets/logo/logo-full-light.png" alt="밥상궁 한식뷔페">
     <div class="hero-ko">한식뷔페 · 반상 전문</div>
     <h1>매일 차리는<br><em>궁의 밥상</em></h1>
     <p class="hero-sub">당일 도정한 쌀로 지은 솥밥과 60종의 반상찬.<br>궁중 반상의 격을, 오늘의 점심값으로 차려냅니다.</p>
@@ -512,24 +490,23 @@ footer{background:#15120F;color:#9C9086;padding:70px 0 34px;font-size:13.5px;fon
 
     <div class="logo-lab rv">
       <div class="logo-stage">
-        <svg class="big"><use href="#logo-mark"/></svg>
-        <div class="logo-lock">
-          <div class="kw">밥상궁</div>
-          <div class="en">BAPSANGGUNG · KOREAN BUFFET</div>
-        </div>
+        <img class="big" src="assets/logo/logo-symbol.png" alt="밥상궁 심볼마크">
+        <img class="lockup" src="assets/logo/logo-full-light.png" alt="밥상궁 가로형 로고">
       </div>
       <div>
         <span class="eyebrow">Logo &amp; Slogan</span>
-        <h3 style="font-size:26px;color:#fff;margin-bottom:22px">인장 속에 차린 한 상</h3>
+        <h3 style="font-size:26px;color:#fff;margin-bottom:22px">솔을 올린 아궁이, 그리고 인장</h3>
         <dl class="logo-notes">
-          <dt>처마선 (飛簷)</dt>
-          <dd>궁궐 지붕의 날렵한 처마 곡선. 브랜드가 지키는 '격'과, 손님을 감싸는 지붕(환대)을 동시에 뜻합니다.</dd>
-          <dt>유기 밥그릇과 김</dt>
-          <dd>놋그릇에 갓 담은 솥밥에서 피어오르는 김. 따뜻한 밥 한 그릇이라는 브랜드의 본질입니다.</dd>
-          <dt>소반 (小盤)</dt>
-          <dd>다리 달린 전통 소반 위에 올린 구성. '차려 드린다', 즉 대접의 태도를 형상화했습니다.</dd>
+          <dt>기와지붕 솔뚚공과 김</dt>
+          <dd>솔뚚공을 궁궐의 기와지붕으로 치환했습니다. 올라오는 두 줄기의 김은 '지금 막 넣은 밥', 즉 갓 지은 것의 온기를 뜻합니다.</dd>
+          <dt>가마솔</dt>
+          <dd>양염 손잡이까지 그려낸 통가마솔. 한 그릇이 아니라 '상을 통째로 차려낸다'는 뷔페의 넘설임을 상징합니다.</dd>
+          <dt>아궁이의 불</dt>
+          <dd>솔 아래 피어오르는 불꿃. 매장에서 직접 지은 솥밥과 화로 라이브 코너, 즉 '직화'의 조리 방식을 드러냅니다.</dd>
           <dt>인장 프레임 (印章)</dt>
-          <dd>왕실 도장을 닮은 사각 인장 테두리. 맛과 위생에 대한 본사의 보증을 상징하며, 간판·포장·유니폼에서 단독으로도 쓰입니다.</dd>
+          <dd>금선을 두른 사각 인장 테두리. 맛과 위생에 대한 본사의 보증을 상징하며, 심볼만 떼어 간판·포장·유니폼에 단독으로 쓰입니다.</dd>
+          <dt>붓글씨 워드마크</dt>
+          <dd>손글씨의 휘림으로 쓴 '밥상궁'. 정감한 수라상의 공식성과 집밥의 손맛을 동시에 전달합니다.</dd>
         </dl>
         <div class="slogan-box">
           <div class="main">“매일 차리는 궁의 밥상”</div>
@@ -545,8 +522,8 @@ footer{background:#15120F;color:#9C9086;padding:70px 0 34px;font-size:13.5px;fon
       <span class="eyebrow">Color System</span>
       <h3 style="font-size:24px;color:#fff">단청과 놋그릇에서 가져온 5색</h3>
       <div class="palette">
-        <div class="sw"><div class="chip" style="background:#9E2A2B"></div><div class="meta"><b>주칠 홍</b><code>#9E2A2B</code><p>메인 컬러. 소반의 옻칠과 궁 기둥의 붉은색. 간판·CTA·핵심 포인트.</p></div></div>
-        <div class="sw"><div class="chip" style="background:#C1962F"></div><div class="meta"><b>유기 금</b><code>#C1962F</code><p>강조 컬러. 놋그릇의 광택. 로고 도형과 프리미엄 라인 표기에 사용.</p></div></div>
+        <div class="sw"><div class="chip" style="background:#92141D"></div><div class="meta"><b>주칠 홍</b><code>#92141D</code><p>메인 컬러. 로고 인장에서 추출한 색. 간판·CTA·핵심 포인트.</p></div></div>
+        <div class="sw"><div class="chip" style="background:#F1CE75"></div><div class="meta"><b>유기 금</b><code>#F1CE75</code><p>강조 컬러. 로고 솔·지붕의 놋빛. 프리미엄 라인과 장식 요소에 사용.</p></div></div>
         <div class="sw"><div class="chip" style="background:#1F6F65"></div><div class="meta"><b>단청 청록</b><code>#1F6F65</code><p>보조 컬러. 단청의 녹청. 제철·건강 메뉴와 안내 사인에 제한적으로.</p></div></div>
         <div class="sw"><div class="chip" style="background:#231C19"></div><div class="meta"><b>먹</b><code>#231C19</code><p>텍스트와 목재 마감. 다크 톤 섹션의 배경으로 브랜드 무게를 잡음.</p></div></div>
         <div class="sw"><div class="chip" style="background:#FAF5EC;border:1px solid rgba(255,255,255,.2)"></div><div class="meta"><b>한지</b><code>#FAF5EC</code><p>바탕색. 한지의 미색. 여백을 넓게 써 '정갈함'을 시각화합니다.</p></div></div>
@@ -781,7 +758,7 @@ footer{background:#15120F;color:#9C9086;padding:70px 0 34px;font-size:13.5px;fon
   <div class="wrap">
     <div class="f-top">
       <div class="f-brand">
-        <svg class="mark"><use href="#logo-mark"/></svg>
+        <img class="mark" src="assets/logo/logo-symbol.png" alt="밥상궁">
         <p style="font-family:'Gowun Batang',serif;font-size:19px;color:#fff;margin-bottom:10px">매일 차리는 궁의 밥상</p>
         <p>밥상궁은 궁중 반상의 구성과 격식을 현대적인 한식뷔페로 옮긴 브랜드입니다. 당일 도정 솥밥과 60종의 반상찬을 90분의 한 끼로 차려 냅니다.</p>
       </div>
