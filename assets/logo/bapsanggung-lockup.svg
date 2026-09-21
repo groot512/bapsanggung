@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 밥상궁 BAPSANGGUNG - Horizontal lockup - primary -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 130" width="940" height="260" role="img" aria-label="밥상궁 BAPSANGGUNG">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&amp;display=swap');
+    .kw{font-family:'Gowun Batang','Nanum Myeongjo','Batang',serif;font-weight:700;font-size:54px;letter-spacing:7px}
+    .en{font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:3.6px}
+  </style>
+  <g transform="translate(12,15)"><g>
+  <rect x="3" y="3" width="94" height="94" rx="16" fill="#9E2A2B"/><rect x="9.5" y="9.5" width="81" height="81" rx="11" fill="none" stroke="#C1962F" stroke-width="1.4" opacity=".85"/>
+  
+  <path d="M9 29.5 C 24 46, 76 46, 91 29.5 L 81 20 L 19 20 Z" fill="#E3C878"/>
+  <path d="M26 26.5 C 34 34, 66 34, 74 26.5" fill="none" stroke="#9E2A2B" stroke-width="1.4" opacity=".55"/>
+  <circle cx="50" cy="15.5" r="2.5" fill="#E3C878"/>
+  <path d="M44.8 55 c 3.2 -3.4 -3.2 -6 0 -9.4" fill="none" stroke="#E3C878" stroke-width="2" stroke-linecap="round" opacity=".92"/>
+  <path d="M55.2 55 c 3.2 -3.4 -3.2 -6 0 -9.4" fill="none" stroke="#E3C878" stroke-width="2" stroke-linecap="round" opacity=".92"/>
+  <path d="M32 59 h36 a18 18 0 0 1 -36 0 z" fill="#E3C878"/>
+  <rect x="29" y="56.2" width="42" height="3.4" rx="1.7" fill="#E3C878"/>
+  <rect x="22" y="78.6" width="56" height="3.6" rx="1.8" fill="#E3C878"/>
+  <path d="M28.5 82.2 l -2.2 5.2 M71.5 82.2 l 2.2 5.2" stroke="#E3C878" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+</g></g>
+  <text class="kw" x="142" y="79" fill="#231C19">밥상궁</text>
+  <text class="en" x="146" y="103" fill="#9E2A2B">BAPSANGGUNG · KOREAN BUFFET</text>
+</svg>
