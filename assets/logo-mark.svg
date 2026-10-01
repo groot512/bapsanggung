@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 32" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">밥상궁 브랜드 마크</title>
+  <desc id="logo-description">짙은 초록색 수평선과 주황색 점으로 만든 간결한 마크</desc>
+  <path d="M4 12h42M4 20h56" fill="none" stroke="#1f4939" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="64" cy="12" r="4" fill="#ef7a32"/>
+</svg>
