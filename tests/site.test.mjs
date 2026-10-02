@@ -92,8 +92,8 @@ test('the 100평 store gallery exposes three accessible views', () => {
   assert.doesNotMatch(html, /role="tabpanel"[^>]*\bhidden\b/);
 });
 
-test('the menu presents about 60 illustrative dishes across all six categories', () => {
-  assert.match(html, /약\s*60종\s*예시\s*메뉴/);
+test('the menu offers around 20 daily selections from over 300 dishes', () => {
+  assert.match(html, /300여 가지 메뉴에서 매일 20가지 내외를 엄선/);
 
   for (const dish of [
     '흰쌀밥', '잡곡밥', '계절 볶음밥',
@@ -126,10 +126,10 @@ test('the 100평 concept allocates all 330㎡ and distinguishes guest and staff 
   assert.doesNotMatch(html, /<span>화장실<\/span>/);
 });
 
-test('the business model states conservative illustrative operating assumptions and exclusions', () => {
+test('the business model states operating assumptions without investment pricing', () => {
+  assert.doesNotMatch(html, /예상 투자|6\.5–9억원|132석|60종/);
   for (const assumption of [
-    '약 132석', '운영 인력', '12–16명', '1일 회전', '2\.0–2\.5회',
-    '예상 투자', '6\.5–9억원', '보증금·권리금', '현장별 추가 공사',
+    '180석', '운영 인력', '12–16명', '1일 회전', '2\.0–2\.5회',
     '상권', '임대 조건', '영업시간', '운영 방식', '수익을 보장하지 않습니다',
   ]) {
     assert.match(html, new RegExp(assumption), `missing business-model qualification: ${assumption}`);
